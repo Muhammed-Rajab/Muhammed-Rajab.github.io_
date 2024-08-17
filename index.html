@@ -8,7 +8,7 @@
     <script src="./script.js" defer type="module"></script>
   </head>
   <body>
-    <header class="header">
+    <main class="header">
       <!-- Name -->
       <h1 class="name">Muhammed Rajab</h1>
       <!-- Image -->
@@ -43,7 +43,7 @@
       <!-- Bio -->
       <section class="about-me">
         <!-- About Me -->
-        <p class="">
+        <p class="" style="margin-top: 1rem">
           <b><i>About Me</i></b>
         </p>
         <p class="">
@@ -55,8 +55,10 @@
           I prefer to keep things simple and minimalistic rather than
           complicating life for myself as developer and for the user.
         </p>
+      </section>
 
-        <!-- Skills -->
+      <!-- Skills -->
+      <section class="skills">
         <p class="" style="margin-top: 1rem">
           <b><i>I'm skillfull at</i></b>
         </p>
@@ -76,12 +78,35 @@
           </li>
           <li>Communicating with teams to reach the common goal.</li>
         </ul>
+      </section>
 
-        <!-- Projects -->
+      <!-- Works -->
+      <section class="works">
         <p class="" style="margin-top: 1rem">
           <b><i>My Works</i></b>
         </p>
+        <div class="project">
+          <p class="title">
+            [<a
+              href="https://github.com/Muhammed-Rajab/file-boy"
+              class=""
+              target="_blank"
+              >file-boy</a
+            >]
+          </p>
+          <p class="description">
+            A no-BS encryption/decryption CLI, made with golang. It allows you
+            to encrypt and decrypt files or entire directories with ease.
+          </p>
+        </div>
+
+        <hr style="margin: 10px 0px 10px 0px" />
       </section>
-    </header>
+
+      <!-- Footer -->
+      <footer class="">
+        <span class="">© 2024 Muhammed Rajab</span>
+      </footer>
+    </main>
   </body>
 </html>

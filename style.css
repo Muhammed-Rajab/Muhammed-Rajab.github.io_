@@ -46,11 +46,40 @@ body {
   text-decoration: underline;
 }
 
-.header .about-me p {
+.header .about-me,
+.header .skills,
+.header .works {
   max-width: 640px;
+  width: 100%;
 }
 
-.header .about-me li {
+.header .skills li {
   list-style-position: inside;
   list-style-type: circle;
+}
+
+.header .works li {
+  list-style-position: inside;
+  list-style-type: none;
+}
+
+.project {
+  margin-top: 0.5rem;
+}
+.project .title {
+  font-size: 1.2rem;
+  color: gray;
+}
+.project .title a {
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+}
+.project .description {
+  margin-top: 0.25rem;
+  color: rgb(44, 44, 44);
+}
+
+footer {
+  padding: 0.25rem 0px 1rem 0px;
 }
