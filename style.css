@@ -1,0 +1,43 @@
+html,
+body,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ! HEADER RULES */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 4rem;
+}
+.header .name {
+}
+
+.header .pfp {
+  width: 256px;
+  margin-top: 1rem;
+}
+.header .navbar {
+  margin-top: 1rem;
+}
+.header .navbar ul {
+  list-style-type: none;
+  display: flex;
+  width: fit-content;
+  /* border: 1px solid black; */
+}
+.header .navbar li {
+  font-size: 1.2rem;
+}
+.header .navbar a,
+.header .navbar a:visited {
+  text-decoration: none;
+  color: darkslateblue;
+}
+.header .navbar a:hover {
+  text-decoration: underline;
+}
