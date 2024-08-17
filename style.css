@@ -12,17 +12,18 @@ body,
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 4rem;
+  padding: 4rem 10px 0px 10px;
+  row-gap: 1rem;
 }
 .header .name {
 }
 
 .header .pfp {
   width: 256px;
-  margin-top: 1rem;
+}
+.header .hobby {
 }
 .header .navbar {
-  margin-top: 1rem;
 }
 .header .navbar ul {
   list-style-type: none;
@@ -35,9 +36,18 @@ body,
 }
 .header .navbar a,
 .header .navbar a:visited {
-  text-decoration: none;
+  text-decoration: wavy;
   color: darkslateblue;
 }
 .header .navbar a:hover {
   text-decoration: underline;
+}
+
+.header .about-me p {
+  max-width: 640px;
+}
+
+.header .about-me li {
+  list-style-position: inside;
+  list-style-type: circle;
 }
