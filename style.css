@@ -9,6 +9,7 @@ body,
 /* ! HEADER RULES */
 body {
   padding: 4rem 10px 0px 10px;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .header {
