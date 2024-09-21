@@ -26,6 +26,7 @@ body {
   width: 256px;
 }
 .header .hobby {
+  margin-top: -8px;
 }
 .header .navbar {
 }
