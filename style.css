@@ -55,6 +55,17 @@ body {
   width: 100%;
 }
 
+.header .image-container {
+  font-size: 10px;
+  background-color: black;
+  border: 3px solid white;
+}
+
+.header .image-container pre {
+  font-family: monospace;
+  line-height: 8px;
+}
+
 .header .skills li,
 .header .learning li {
   list-style-position: inside;
