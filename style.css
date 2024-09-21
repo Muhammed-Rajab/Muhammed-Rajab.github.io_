@@ -49,12 +49,14 @@ body {
 
 .header .about-me,
 .header .skills,
-.header .works {
+.header .works,
+.header .learning {
   max-width: 640px;
   width: 100%;
 }
 
-.header .skills li {
+.header .skills li,
+.header .learning li {
   list-style-position: inside;
   list-style-type: circle;
 }
