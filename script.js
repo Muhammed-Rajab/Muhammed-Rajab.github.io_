@@ -85,15 +85,15 @@ const categories = [
 ];
 
 categories.forEach((category) => {
-  const a = document.createElement("button");
-  a.innerText = `${category}`;
-  a.addEventListener("click", (e) => {
+  const btn = document.createElement("button");
+  btn.innerText = `${category}`;
+  btn.addEventListener("click", (e) => {
 
     worksCategoriesContainer.querySelectorAll("button").forEach(button => {
       button.classList.remove("bold-button")
     })
 
-    a.classList.add("bold-button")
+    btn.classList.add("bold-button")
 
     e.preventDefault();
     // SHOW ONLY THE TAGS
@@ -112,9 +112,9 @@ categories.forEach((category) => {
     }
   });
   if (category === 'all') {
-    a.classList.add("bold-button")
+    btn.classList.add("bold-button")
   }
-  worksCategoriesContainer.appendChild(a);
+  worksCategoriesContainer.appendChild(btn);
   worksCategoriesContainer.appendChild(
     document.createTextNode("\u00A0".repeat(2))
   );
