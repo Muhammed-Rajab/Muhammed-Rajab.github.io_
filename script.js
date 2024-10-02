@@ -57,7 +57,8 @@ const generateProject = ({ title = "", desc = "", tags = [], github = "" }) => {
 
   // Create the 'a' elements for the tags
   tags.forEach((tag) => {
-    const tagEl = document.createElement("a");
+    const tagEl = document.createElement("span");
+    tagEl.disabled = true;
     tagEl.href = "";
     // tagEl.classList.add("");
     tagEl.textContent = tag;

@@ -118,3 +118,7 @@ footer {
 .bold-button {
   font-weight: 700;
 }
+
+.tags span {
+  font-style: italic;
+}
