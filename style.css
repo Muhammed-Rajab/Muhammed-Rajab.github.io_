@@ -6,6 +6,10 @@ body,
   padding: 0;
 }
 
+a {
+  cursor: pointer;
+}
+
 /* ! HEADER RULES */
 body {
   padding: 4rem 10px 0px 10px;
@@ -101,4 +105,16 @@ footer {
 
 .tags {
   margin-top: 7px;
+}
+
+.works-categories {
+  margin-top: 10px;
+}
+
+.works-categories button {
+  padding: 0 2px;
+}
+
+.bold-button {
+  font-weight: 700;
 }

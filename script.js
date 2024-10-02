@@ -8,13 +8,19 @@ const works = [
   {
     title: "img2ascii.cpp",
     desc: "Convert your images🖼️ to ASCII art🎨 instantly with img2ascii.cpp!",
-    tags: ["cpp"],
+    tags: ["cpp", "cli"],
     github: "https://github.com/Muhammed-Rajab/img2ascii.cpp/",
+  },
+  {
+    title: "camouflage.cpp",
+    desc: "A fun and visual🦎 way to see natural selection in action!",
+    tags: ["cpp", "raylib"],
+    github: "https://github.com/Muhammed-Rajab/camouflage.cpp",
   },
 ];
 
 const worksContainer = document.querySelector(".works-container");
-
+const worksCategoriesContainer = document.querySelector(".works-categories");
 
 const generateProject = ({ title = "", desc = "", tags = [], github = "" }) => {
   // Create the 'div' element with the 'project' class
@@ -24,7 +30,7 @@ const generateProject = ({ title = "", desc = "", tags = [], github = "" }) => {
   // Create the 'p' element for the title
   const titleP = document.createElement("p");
   titleP.classList.add("title");
-  titleP.appendChild(document.createTextNode("["))
+  titleP.appendChild(document.createTextNode("["));
 
   // Create the 'a' element with the link
   const linkA = document.createElement("a");
@@ -35,7 +41,7 @@ const generateProject = ({ title = "", desc = "", tags = [], github = "" }) => {
 
   // Append the 'a' element to the title paragraph
   titleP.appendChild(linkA);
-  titleP.appendChild(document.createTextNode("]"))
+  titleP.appendChild(document.createTextNode("]"));
 
   // Create the 'p' element for the description
   const descriptionP = document.createElement("p");
@@ -44,8 +50,10 @@ const generateProject = ({ title = "", desc = "", tags = [], github = "" }) => {
 
   // Create the 'p' element for the tags
   const tagsP = document.createElement("p");
-  tagsP.classList.add("tags")
-  tagsP.appendChild(document.createTextNode(tags.length > 1 ? "Tags: " : "Tag: "));
+  tagsP.classList.add("tags");
+  tagsP.appendChild(
+    document.createTextNode(tags.length > 1 ? "Tags: " : "Tag: ")
+  );
 
   // Create the 'a' elements for the tags
   tags.forEach((tag) => {
@@ -54,7 +62,7 @@ const generateProject = ({ title = "", desc = "", tags = [], github = "" }) => {
     // tagEl.classList.add("");
     tagEl.textContent = tag;
     tagsP.appendChild(tagEl);
-    tagsP.innerHTML += "&nbsp;".repeat(2)
+    tagsP.innerHTML += "&nbsp;".repeat(2);
   });
 
   // Append all the elements to the project div
@@ -66,5 +74,48 @@ const generateProject = ({ title = "", desc = "", tags = [], github = "" }) => {
   return projectDiv;
 };
 
+works.forEach((work) => worksContainer.append(generateProject(work)));
 
-works.forEach(work => worksContainer.append(generateProject(work)));
+// Add work categories
+const categories = [
+  "all",
+  ...new Set(
+    works.map((work) => work.tags).reduce((acc, curr) => [...acc, ...curr])
+  ),
+];
+
+categories.forEach((category) => {
+  const a = document.createElement("button");
+  a.innerText = `${category}`;
+  a.addEventListener("click", (e) => {
+
+    worksCategoriesContainer.querySelectorAll("button").forEach(button => {
+      button.classList.remove("bold-button")
+    })
+
+    a.classList.add("bold-button")
+
+    e.preventDefault();
+    // SHOW ONLY THE TAGS
+    worksContainer.innerHTML = "";
+    if (category === "all") {
+      works
+        .forEach((work) => {
+          worksContainer.appendChild(generateProject(work));
+        });
+    } else {
+      works
+        .filter((work) => work.tags.includes(category))
+        .forEach((work) => {
+          worksContainer.appendChild(generateProject(work));
+        });
+    }
+  });
+  if (category === 'all') {
+    a.classList.add("bold-button")
+  }
+  worksCategoriesContainer.appendChild(a);
+  worksCategoriesContainer.appendChild(
+    document.createTextNode("\u00A0".repeat(2))
+  );
+});
