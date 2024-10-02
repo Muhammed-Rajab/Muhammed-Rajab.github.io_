@@ -2,14 +2,14 @@ const works = [
   {
     title: "file-boy",
     desc: "A no-BS encryption/decryption CLI, made with golang. It allows you to encrypt and decrypt files or entire directories with ease.",
-    tags: ["go"],
-    github: "https://github.com",
+    tags: ["go", "cli"],
+    github: "https://github.com/Muhammed-Rajab/file-boy",
   },
   {
     title: "img2ascii.cpp",
     desc: "Convert your images🖼️ to ASCII art🎨 instantly with img2ascii.cpp!",
     tags: ["cpp"],
-    github: "https://github.com",
+    github: "https://github.com/Muhammed-Rajab/img2ascii.cpp/",
   },
 ];
 
@@ -24,15 +24,18 @@ const generateProject = ({ title = "", desc = "", tags = [], github = "" }) => {
   // Create the 'p' element for the title
   const titleP = document.createElement("p");
   titleP.classList.add("title");
+  titleP.appendChild(document.createTextNode("["))
 
   // Create the 'a' element with the link
   const linkA = document.createElement("a");
+  linkA.classList.add("work-link");
   linkA.href = github;
   linkA.target = "_blank";
-  linkA.textContent = title;
+  linkA.textContent = `${title}`;
 
   // Append the 'a' element to the title paragraph
   titleP.appendChild(linkA);
+  titleP.appendChild(document.createTextNode("]"))
 
   // Create the 'p' element for the description
   const descriptionP = document.createElement("p");
@@ -41,7 +44,8 @@ const generateProject = ({ title = "", desc = "", tags = [], github = "" }) => {
 
   // Create the 'p' element for the tags
   const tagsP = document.createElement("p");
-  tagsP.appendChild(document.createTextNode("Tags: "));
+  tagsP.classList.add("tags")
+  tagsP.appendChild(document.createTextNode(tags.length > 1 ? "Tags: " : "Tag: "));
 
   // Create the 'a' elements for the tags
   tags.forEach((tag) => {
@@ -50,7 +54,7 @@ const generateProject = ({ title = "", desc = "", tags = [], github = "" }) => {
     // tagEl.classList.add("");
     tagEl.textContent = tag;
     tagsP.appendChild(tagEl);
-    tagsP.appendChild(document.createTextNode(" "));
+    tagsP.innerHTML += "&nbsp;".repeat(2)
   });
 
   // Append all the elements to the project div
