@@ -14,7 +14,7 @@ const works = [
   {
     title: "camouflage.cpp",
     desc: "A fun and visual🦎 way to see natural selection in action!",
-    tags: ["cpp", "raylib"],
+    tags: ["cpp", "raylib", "genetic algoritm"],
     github: "https://github.com/Muhammed-Rajab/camouflage.cpp",
   },
 ];
