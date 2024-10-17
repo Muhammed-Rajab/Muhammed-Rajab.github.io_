@@ -109,6 +109,10 @@ footer {
 
 .works-categories {
   margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 10px;
 }
 
 .works-categories button {
