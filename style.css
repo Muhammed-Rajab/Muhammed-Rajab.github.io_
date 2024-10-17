@@ -61,14 +61,15 @@ body {
 }
 
 .header .image-container {
-  font-size: 10px;
-  background-color: black;
-  border: 3px solid white;
-}
-
-.header .image-container pre {
-  font-family: monospace;
-  line-height: 8px;
+  border: 3px solid black;
+  border-style: groove;
+  width: 100%;
+  max-width: 512px;
+  height: 400px;
+  background-image: url(/assets/images/ray.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .header .skills li,
