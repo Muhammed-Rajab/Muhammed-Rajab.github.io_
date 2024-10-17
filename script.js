@@ -4,25 +4,35 @@ const works = [
     desc: "A no-BS encryption/decryption CLI, made with golang. It allows you to encrypt and decrypt files or entire directories with ease.",
     tags: ["go", "cli"],
     github: "https://github.com/Muhammed-Rajab/file-boy",
+    under_development:false,
   },
   {
     title: "img2ascii.cpp",
     desc: "Convert your images🖼️ to ASCII art🎨 instantly with img2ascii.cpp!",
     tags: ["cpp", "cli"],
     github: "https://github.com/Muhammed-Rajab/img2ascii.cpp/",
+    under_development:false,
   },
   {
     title: "camouflage.cpp",
     desc: "A fun and visual🦎 way to see natural selection in action!",
     tags: ["cpp", "raylib", "genetic algoritm"],
     github: "https://github.com/Muhammed-Rajab/camouflage.cpp",
+    under_development:false,
+  },
+  {
+    title: "terrible-renderer.cpp",
+    desc: "couldn't bother myself finding a better name",
+    tags: ["cpp", "ascii", "raymarching", "rendering"],
+    github: "https://github.com/Muhammed-Rajab/terrible-renderer.cpp",
+    under_development:true,
   },
 ];
 
 const worksContainer = document.querySelector(".works-container");
 const worksCategoriesContainer = document.querySelector(".works-categories");
 
-const generateProject = ({ title = "", desc = "", tags = [], github = "" }) => {
+const generateProject = ({ title = "", desc = "", tags = [], github = "", under_development = false }) => {
   // Create the 'div' element with the 'project' class
   const projectDiv = document.createElement("div");
   projectDiv.classList.add("project");
@@ -35,6 +45,9 @@ const generateProject = ({ title = "", desc = "", tags = [], github = "" }) => {
   // Create the 'a' element with the link
   const linkA = document.createElement("a");
   linkA.classList.add("work-link");
+  if (under_development) {
+    linkA.classList.add("under-dev-work")
+  }
   linkA.href = github;
   linkA.target = "_blank";
   linkA.textContent = `${title}`;

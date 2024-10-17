@@ -122,3 +122,7 @@ footer {
 .tags span {
   font-style: italic;
 }
+
+.under-dev-work {
+  color: red !important;
+}
