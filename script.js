@@ -6,6 +6,7 @@ const works = [
     tags: ["go", "cli"],
     github: "https://github.com/Muhammed-Rajab/file-boy",
     under_development: false,
+    new_project: false,
   },
   {
     title: "img2ascii.cpp",
@@ -13,6 +14,7 @@ const works = [
     tags: ["cpp", "cli"],
     github: "https://github.com/Muhammed-Rajab/img2ascii.cpp/",
     under_development: false,
+    new_project: false,
   },
   {
     title: "camouflage.cpp",
@@ -20,13 +22,22 @@ const works = [
     tags: ["cpp", "raylib", "genetic algoritm"],
     github: "https://github.com/Muhammed-Rajab/camouflage.cpp",
     under_development: false,
+    new_project: false,
   },
   {
     title: "terrible-renderer.cpp",
     desc: "couldn't bother myself finding a better name",
-    tags: ["cpp", "ascii", "raymarching", "rendering", "under_construction", "cli"],
+    tags: [
+      "cpp",
+      "ascii",
+      "raymarching",
+      "rendering",
+      "under_construction",
+      "cli",
+    ],
     github: "https://github.com/Muhammed-Rajab/terrible-renderer.cpp",
     under_development: true,
+    new_project: true,
   },
 ];
 
@@ -40,6 +51,7 @@ function SetupWorksSection() {
     tags = [],
     github = "",
     under_development = false,
+    new_project = false,
   }) => {
     // Create the 'div' element with the 'project' class
     const projectDiv = document.createElement("div");
@@ -63,6 +75,12 @@ function SetupWorksSection() {
     // Append the 'a' element to the title paragraph
     titleP.appendChild(linkA);
     titleP.appendChild(document.createTextNode("]"));
+    if (new_project) {
+      const newTag = document.createElement("img");
+      newTag.src = "/assets/images/new.gif";
+      newTag.classList.add("new-tag")
+      titleP.appendChild(newTag);
+    }
 
     // Create the 'p' element for the description
     const descriptionP = document.createElement("p");

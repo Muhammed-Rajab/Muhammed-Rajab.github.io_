@@ -106,11 +106,18 @@ footer {
 .works .works-container .project .title {
   font-size: 1.2rem;
   color: gray;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 .works .works-container .project .title a {
   color: black;
   text-decoration: none;
   font-weight: 700;
+}
+.works .works-container .project .title .new-tag {
+  width: 40px;
+  height: 40px;
 }
 .works .works-container .project .description {
   margin-top: 0.25rem;
