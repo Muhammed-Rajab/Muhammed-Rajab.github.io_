@@ -6,6 +6,7 @@
 .section {
   max-width: 640px !important;
   width: 100%;
+  margin-top: 1rem;
 }
 
 .header {
@@ -59,6 +60,12 @@
   }
 }
 
+.about-me {
+    p:first-child {
+        margin-top: 1rem;
+    }
+}
+
 .skills,
 .learning {
   li {
@@ -108,8 +115,8 @@
         }
         
         .new-tag{
-            width: 40px;
-            height: 40px;
+            width: 28px;
+            height: 28px;
         }
       }
 
