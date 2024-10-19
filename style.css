@@ -23,17 +23,21 @@ body {
   flex-direction: column;
   row-gap: 1rem;
 }
+
 .header .name {
 }
 
 .header .pfp {
   width: 256px;
 }
+
 .header .hobby {
   margin-top: -8px;
 }
+
 .header .navbar {
 }
+
 .header .navbar ul {
   list-style-type: none;
   display: flex;

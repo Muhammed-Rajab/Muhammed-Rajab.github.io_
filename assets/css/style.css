@@ -1,0 +1,60 @@
+html,
+body,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  cursor: pointer;
+}
+
+body {
+  padding: 4rem 10px 0px 10px;
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.section {
+  max-width: 640px !important;
+  width: 100%;
+}
+
+.header .hobby {
+  margin-top: -8px;
+}
+.header .image-container {
+  border: 3px solid black;
+  border-style: groove;
+  width: 100%;
+  max-width: 512px;
+  height: 400px;
+  background-image: url(/assets/images/ray.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.header .navbar ul {
+  list-style-type: none;
+  display: flex;
+  width: fit-content;
+}
+.header .navbar ul li {
+  font-size: 1.2rem;
+}
+.header .navbar ul li a,
+.header .navbar ul li a:visited {
+  text-decoration: wavy;
+  color: darkslateblue;
+}
+.header .navbar ul li a:hover,
+.header .navbar ul li a:visited:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=style.css.map */
