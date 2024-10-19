@@ -25,7 +25,6 @@ body {
 .section {
   max-width: 640px !important;
   width: 100%;
-
 }
 
 .header {
@@ -76,4 +75,73 @@ body {
       }
     }
   }
+}
+
+.skills,
+.learning {
+  li {
+    list-style-position: inside;
+    list-style-type: circle;
+  }
+}
+
+.works {
+  li {
+    list-style-position: inside;
+    list-style-type: circle;
+  }
+
+  .works-categories {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 10px;
+
+    button {
+      padding: 0 2px;
+    }
+  }
+
+  .works-container {
+    .project {
+      margin-top: 0.5rem;
+
+      .under-dev-work {
+        color: red !important;
+      }
+
+      .title {
+        font-size: 1.2rem;
+        color: gray;
+
+        a {
+          color: black;
+          text-decoration: none;
+          font-weight: 700;
+        }
+      }
+
+      .description {
+        margin-top: 0.25rem;
+        color: rgb(44, 44, 44);
+      }
+
+      .tags {
+        margin-top: 7px;
+
+        span {
+          font-style: italic;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding: 0.25rem 0px 1rem 0px;
+}
+
+.bold-button {
+  font-weight: 700;
 }

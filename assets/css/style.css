@@ -65,4 +65,58 @@ body {
   text-decoration: underline;
 }
 
+.skills li,
+.learning li {
+  list-style-position: inside;
+  list-style-type: circle;
+}
+
+.works li {
+  list-style-position: inside;
+  list-style-type: circle;
+}
+.works .works-categories {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+.works .works-categories button {
+  padding: 0 2px;
+}
+.works .works-container .project {
+  margin-top: 0.5rem;
+}
+.works .works-container .project .under-dev-work {
+  color: red !important;
+}
+.works .works-container .project .title {
+  font-size: 1.2rem;
+  color: gray;
+}
+.works .works-container .project .title a {
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+}
+.works .works-container .project .description {
+  margin-top: 0.25rem;
+  color: rgb(44, 44, 44);
+}
+.works .works-container .project .tags {
+  margin-top: 7px;
+}
+.works .works-container .project .tags span {
+  font-style: italic;
+}
+
+footer {
+  padding: 0.25rem 0px 1rem 0px;
+}
+
+.bold-button {
+  font-weight: 700;
+}
+
 /*# sourceMappingURL=style.css.map */
