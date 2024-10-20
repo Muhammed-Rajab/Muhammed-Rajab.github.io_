@@ -32,11 +32,10 @@ const works = [
       "ascii",
       "raymarching",
       "rendering",
-      "under_construction",
       "cli",
     ],
     github: "https://github.com/Muhammed-Rajab/terrible-renderer.cpp",
-    under_development: true,
+    under_development: false,
     new_project: true,
   },
 ];
