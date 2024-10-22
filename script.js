@@ -121,16 +121,17 @@ const categories = [
   ),
 ];
 
-// * FUNCTION TO SHOW WORKS BASED ON PAGE NUMBER AND CATEGORY
+let currentCategory = "all";
+let currentPageIndex = 0;
 
-const generateProject = ({
+function generateProject({
   title = "",
   desc = "",
   tags = [],
   github = "",
   under_development = false,
   new_project = false,
-}) => {
+}) {
   // Create the 'div' element with the 'project' class
   const projectDiv = document.createElement("div");
   projectDiv.classList.add("project");
@@ -190,9 +191,27 @@ const generateProject = ({
 
   // Append the project div to the body (or another container element)
   return projectDiv;
-};
+}
+
+// * FUNCTION TO SHOW WORKS BASED ON PAGE NUMBER AND CATEGORY
 function updateWorksContainer(pageIndex = 0, category = "all") {
   worksContainer.innerHTML = "";
+  const MAX_WORKS_PER_PAGE = 5;
+  const PAGE_COUNT = Math.ceil(works.length / MAX_WORKS_PER_PAGE);
+
+  const slicingStartIndex = pageIndex * MAX_WORKS_PER_PAGE;
+  const slicingEndIndex = pageIndex * MAX_WORKS_PER_PAGE + MAX_WORKS_PER_PAGE;
+
+  if (category == "all") {
+    works
+      .slice(slicingStartIndex, slicingEndIndex)
+      .forEach((work) => worksContainer.appendChild(generateProject(work)));
+  } else {
+    works
+      .filter((work) => work.tags.includes(category))
+      .slice(slicingStartIndex, slicingEndIndex)
+      .forEach((work) => worksContainer.appendChild(generateProject(work)));
+  }
 }
 
 // * ADD EACH CATEGORY TO WORKS CATEGORY
@@ -200,26 +219,15 @@ categories.forEach((category) => {
   const btn = document.createElement("button");
   btn.innerText = `${category}`;
   btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    currentCategory = category;
+
     worksCategoriesContainer.querySelectorAll("button").forEach((button) => {
       button.classList.remove("bold-button");
     });
 
     btn.classList.add("bold-button");
-
-    e.preventDefault();
-    // SHOW ONLY THE TAGS
-    worksContainer.innerHTML = "";
-    if (category === "all") {
-      works.forEach((work) => {
-        worksContainer.appendChild(generateProject(work));
-      });
-    } else {
-      works
-        .filter((work) => work.tags.includes(category))
-        .forEach((work) => {
-          worksContainer.appendChild(generateProject(work));
-        });
-    }
+    updateWorksContainer(0, currentCategory);
   });
   if (category === "all") {
     btn.classList.add("bold-button");
@@ -230,68 +238,5 @@ categories.forEach((category) => {
   );
 });
 
-function SetupWorksSection() {
-  let currentPageIndex = 3;
-  const MAX_WORKS_PER_PAGE = 5;
-  const PAGE_COUNT = Math.ceil(works.length / MAX_WORKS_PER_PAGE);
-
-  console.log(`current page index: ${currentPageIndex}`);
-  console.log(`max works per page: ${MAX_WORKS_PER_PAGE}`);
-  console.log(`work count: ${works.length}`);
-  console.log(`page count: ${PAGE_COUNT}`);
-
-  worksContainer.innerHTML = "";
-  const slicingStartIndex = currentPageIndex * MAX_WORKS_PER_PAGE;
-  const slicingEndIndex =
-    currentPageIndex * MAX_WORKS_PER_PAGE + MAX_WORKS_PER_PAGE;
-  console.log(`slicing starts at ${slicingStartIndex}`);
-  console.log(`slicing ends at ${slicingEndIndex}`);
-  works
-    .slice(slicingStartIndex, slicingEndIndex)
-    .forEach((work) => worksContainer.append(generateProject(work)));
-
-  // Add work categories
-  const categories = [
-    "all",
-    ...new Set(
-      works.map((work) => work.tags).reduce((acc, curr) => [...acc, ...curr])
-    ),
-  ];
-
-  // categories.forEach((category) => {
-  //   const btn = document.createElement("button");
-  //   btn.innerText = `${category}`;
-  //   btn.addEventListener("click", (e) => {
-  //     worksCategoriesContainer.querySelectorAll("button").forEach((button) => {
-  //       button.classList.remove("bold-button");
-  //     });
-
-  //     btn.classList.add("bold-button");
-
-  //     e.preventDefault();
-  //     // SHOW ONLY THE TAGS
-  //     worksContainer.innerHTML = "";
-  //     if (category === "all") {
-  //       works.forEach((work) => {
-  //         worksContainer.appendChild(generateProject(work));
-  //       });
-  //     } else {
-  //       works
-  //         .filter((work) => work.tags.includes(category))
-  //         .forEach((work) => {
-  //           worksContainer.appendChild(generateProject(work));
-  //         });
-  //     }
-  //   });
-  //   if (category === "all") {
-  //     btn.classList.add("bold-button");
-  //   }
-  //   worksCategoriesContainer.appendChild(btn);
-  //   worksCategoriesContainer.appendChild(
-  //     document.createTextNode("\u00A0".repeat(2))
-  //   );
-  // });
-}
-
-SetupWorksSection();
+updateWorksContainer(0, "all");
 //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
