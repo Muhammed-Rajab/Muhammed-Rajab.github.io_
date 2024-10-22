@@ -115,6 +115,7 @@ const works = [
 const prevWorksButton = document.querySelector(".prev-btn");
 const nextWorksButton = document.querySelector(".next-btn");
 const worksContainer = document.querySelector(".works-container");
+const worksPageNoPara= document.querySelector(".works-pagination");
 const worksCategoriesContainer = document.querySelector(".works-categories");
 
 const categories = [
