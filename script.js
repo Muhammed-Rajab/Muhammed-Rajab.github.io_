@@ -121,8 +121,10 @@ const categories = [
   ),
 ];
 
-let currentCategory = "all";
 let currentPageIndex = 0;
+let currentCategory = "all";
+const MAX_WORKS_PER_PAGE = 5;
+const PAGE_COUNT = Math.ceil(works.length / MAX_WORKS_PER_PAGE);
 
 function generateProject({
   title = "",
@@ -196,9 +198,6 @@ function generateProject({
 // * FUNCTION TO SHOW WORKS BASED ON PAGE NUMBER AND CATEGORY
 function updateWorksContainer(pageIndex = 0, category = "all") {
   worksContainer.innerHTML = "";
-  const MAX_WORKS_PER_PAGE = 5;
-  const PAGE_COUNT = Math.ceil(works.length / MAX_WORKS_PER_PAGE);
-
   const slicingStartIndex = pageIndex * MAX_WORKS_PER_PAGE;
   const slicingEndIndex = pageIndex * MAX_WORKS_PER_PAGE + MAX_WORKS_PER_PAGE;
 
