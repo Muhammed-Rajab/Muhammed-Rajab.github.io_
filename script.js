@@ -112,8 +112,11 @@ const works = [
 //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //* WORKS SECTIONS HANDLING
 //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+const prevWorksButton = document.querySelector(".prev-btn");
+const nextWorksButton = document.querySelector(".next-btn");
 const worksContainer = document.querySelector(".works-container");
 const worksCategoriesContainer = document.querySelector(".works-categories");
+
 const categories = [
   "all",
   ...new Set(
@@ -238,4 +241,21 @@ categories.forEach((category) => {
 });
 
 updateWorksContainer(0, "all");
+
+prevWorksButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (currentPageIndex != 0) {
+    currentPageIndex -= 1;
+    updateWorksContainer(currentPageIndex, currentCategory);
+  }
+});
+
+nextWorksButton.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (currentPageIndex < PAGE_COUNT -1) {
+    currentPageIndex += 1;
+    updateWorksContainer(currentPageIndex, currentCategory);
+  }
+});
 //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
