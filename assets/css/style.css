@@ -102,6 +102,17 @@ footer {
 .works .works-categories button {
   padding: 0 2px;
 }
+.works .works-navigator {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+  margin-top: 1rem;
+}
+.works .works-navigator button {
+  padding: 5px;
+}
 .works .works-container .project {
   margin-top: 0.5rem;
 }
