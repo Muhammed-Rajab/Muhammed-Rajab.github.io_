@@ -32,6 +32,83 @@ const works = [
     under_development: false,
     new_project: true,
   },
+
+  //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  {
+    title: "img2ascii.cpp",
+    desc: "convert your images🖼️ to ASCII art🎨 instantly with img2ascii.cpp!",
+    tags: ["cpp", "cli"],
+    github: "https://github.com/Muhammed-Rajab/img2ascii.cpp/",
+    under_development: false,
+    new_project: false,
+  },
+  {
+    title: "camouflage.cpp",
+    desc: "a fun and visual🦎 way to see natural selection in action!",
+    tags: ["cpp", "raylib", "genetic algoritm"],
+    github: "https://github.com/Muhammed-Rajab/camouflage.cpp",
+    under_development: false,
+    new_project: false,
+  },
+  {
+    title: "terrible-renderer.cpp",
+    desc: "couldn't bother myself finding a better name",
+    tags: ["cpp", "ascii", "raymarching", "rendering", "cli"],
+    github: "https://github.com/Muhammed-Rajab/terrible-renderer.cpp",
+    under_development: false,
+    new_project: true,
+  },
+  {
+    title: "img2ascii.cpp",
+    desc: "convert your images🖼️ to ASCII art🎨 instantly with img2ascii.cpp!",
+    tags: ["cpp", "cli"],
+    github: "https://github.com/Muhammed-Rajab/img2ascii.cpp/",
+    under_development: false,
+    new_project: false,
+  },
+  {
+    title: "camouflage.cpp",
+    desc: "a fun and visual🦎 way to see natural selection in action!",
+    tags: ["cpp", "raylib", "genetic algoritm"],
+    github: "https://github.com/Muhammed-Rajab/camouflage.cpp",
+    under_development: false,
+    new_project: false,
+  },
+  {
+    title: "terrible-renderer.cpp",
+    desc: "couldn't bother myself finding a better name",
+    tags: ["cpp", "ascii", "raymarching", "rendering", "cli"],
+    github: "https://github.com/Muhammed-Rajab/terrible-renderer.cpp",
+    under_development: false,
+    new_project: true,
+  },
+  {
+    title: "img2ascii.cpp",
+    desc: "convert your images🖼️ to ASCII art🎨 instantly with img2ascii.cpp!",
+    tags: ["cpp", "cli"],
+    github: "https://github.com/Muhammed-Rajab/img2ascii.cpp/",
+    under_development: false,
+    new_project: false,
+  },
+  {
+    title: "camouflage.cpp",
+    desc: "a fun and visual🦎 way to see natural selection in action!",
+    tags: ["cpp", "raylib", "genetic algoritm"],
+    github: "https://github.com/Muhammed-Rajab/camouflage.cpp",
+    under_development: false,
+    new_project: false,
+  },
+  {
+    title: "terrible-renderer.cpp",
+    desc: "couldn't bother myself finding a better name",
+    tags: ["cpp", "ascii", "raymarching", "rendering", "cli"],
+    github: "https://github.com/Muhammed-Rajab/terrible-renderer.cpp",
+    under_development: false,
+    new_project: true,
+  },
+
+
+
 ];
 
 //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -40,7 +117,7 @@ const works = [
 const prevWorksButton = document.querySelector(".prev-btn");
 const nextWorksButton = document.querySelector(".next-btn");
 const worksContainer = document.querySelector(".works-container");
-const worksPageNoPara= document.querySelector(".works-pagination");
+const worksPageNoPara = document.querySelector(".works-pagination");
 const worksCategoriesContainer = document.querySelector(".works-categories");
 
 const categories = [
@@ -174,14 +251,40 @@ prevWorksButton.addEventListener("click", (e) => {
     currentPageIndex -= 1;
     updateWorksContainer(currentPageIndex, currentCategory);
   }
+
+  // * DISABLE PREV BTN
+  if (currentPageIndex == 0) {
+    prevWorksButton.disabled = true;
+  }
+
+  // * ENABLE NEXT BTN
+  if (currentPageIndex < PAGE_COUNT - 1) {
+    nextWorksButton.disabled = false;
+  }
 });
 
 nextWorksButton.addEventListener("click", (e) => {
   e.preventDefault();
 
-  if (currentPageIndex < PAGE_COUNT -1) {
+  if (currentPageIndex < PAGE_COUNT - 1) {
     currentPageIndex += 1;
     updateWorksContainer(currentPageIndex, currentCategory);
   }
+
+  // * DISABLE NEXT
+  if (currentPageIndex == PAGE_COUNT - 1) {
+    nextWorksButton.disabled = true;
+  }
+
+  // * ENABLE PREV BTN
+  if (currentPageIndex > 0) {
+    prevWorksButton.disabled = false;
+  }
 });
+
+//* ENABLING/DISABLING PREV/NEXT BTNS BASED ON INDEX
+prevWorksButton.disabled = true;
+if (currentPageIndex == PAGE_COUNT - 1) {
+  nextWorksButton.disabled = true;
+}
 //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
