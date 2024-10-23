@@ -90,8 +90,12 @@
     }
   }
 
-  .works-navigator {
+  .works-pagination {
+    margin-top: 1rem;
+    text-align: center;
+  }
 
+  .works-navigator {
     display: flex;
     width: 100%;
     justify-content: center;

@@ -102,6 +102,10 @@ footer {
 .works .works-categories button {
   padding: 0 2px;
 }
+.works .works-pagination {
+  margin-top: 1rem;
+  text-align: center;
+}
 .works .works-navigator {
   display: flex;
   width: 100%;

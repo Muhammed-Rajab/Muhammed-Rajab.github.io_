@@ -106,9 +106,6 @@ const works = [
     under_development: false,
     new_project: true,
   },
-
-
-
 ];
 
 //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -117,6 +114,7 @@ const works = [
 const prevWorksButton = document.querySelector(".prev-btn");
 const nextWorksButton = document.querySelector(".next-btn");
 const worksContainer = document.querySelector(".works-container");
+const pageNumberPara = document.querySelector(".works-pagination");
 const worksPageNoPara = document.querySelector(".works-pagination");
 const worksCategoriesContainer = document.querySelector(".works-categories");
 
@@ -131,6 +129,10 @@ let currentPageIndex = 0;
 let currentCategory = "all";
 const MAX_WORKS_PER_PAGE = 5;
 const PAGE_COUNT = Math.ceil(works.length / MAX_WORKS_PER_PAGE);
+
+function updatePageNumner(currentPageNo, pageCount) {
+  pageNumberPara.innerHTML = `${currentPageNo} out of ${pageCount}`;
+}
 
 function generateProject({
   title = "",
@@ -261,6 +263,8 @@ prevWorksButton.addEventListener("click", (e) => {
   if (currentPageIndex < PAGE_COUNT - 1) {
     nextWorksButton.disabled = false;
   }
+
+  updatePageNumner(currentPageIndex + 1, PAGE_COUNT);
 });
 
 nextWorksButton.addEventListener("click", (e) => {
@@ -280,6 +284,8 @@ nextWorksButton.addEventListener("click", (e) => {
   if (currentPageIndex > 0) {
     prevWorksButton.disabled = false;
   }
+
+  updatePageNumner(currentPageIndex + 1, PAGE_COUNT);
 });
 
 //* ENABLING/DISABLING PREV/NEXT BTNS BASED ON INDEX
@@ -287,4 +293,5 @@ prevWorksButton.disabled = true;
 if (currentPageIndex == PAGE_COUNT - 1) {
   nextWorksButton.disabled = true;
 }
+updatePageNumner(currentPageIndex + 1, PAGE_COUNT);
 //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
