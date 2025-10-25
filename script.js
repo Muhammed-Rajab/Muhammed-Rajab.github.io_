@@ -48,6 +48,15 @@ const works = [
     under_development: false,
     new_project: true,
   },
+
+  {
+    title: "terrible-renderer.cpp",
+    desc: "couldn't bother myself finding a better name",
+    tags: ["cpp", "ascii", "raymarching", "rendering", "cli"],
+    github: "https://github.com/Muhammed-Rajab/terrible-renderer.cpp",
+    under_development: false,
+    new_project: true,
+  },
 ];
 
 //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -68,8 +77,8 @@ const categories = [
 ];
 
 let currentPageIndex = 0;
-let currentCategory = "go";
-const MAX_WORKS_PER_PAGE = 5;
+let currentCategory = "all";
+const MAX_WORKS_PER_PAGE = 4;
 const PAGE_COUNT = Math.ceil(works.length / MAX_WORKS_PER_PAGE);
 
 function updatePageNumner(currentPageNo, pageCount) {
@@ -253,16 +262,16 @@ nextWorksButton.addEventListener("click", (e) => {
   updatePageNumner(currentPageIndex + 1, PAGE_COUNT);
 });
 
-//* ENABLING/DISABLING PREV/NEXT BTNS BASED ON INDEX
-prevWorksButton.disabled = true;
-if (currentPageIndex == PAGE_COUNT - 1) {
-  nextWorksButton.disabled = true;
-}
-updatePageNumner(currentPageIndex + 1, PAGE_COUNT);
-//*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
 function main() {
-  updateWorksContainer(0, "all");
+  updateWorksContainer(currentPageIndex, currentCategory);
+  //* ENABLING/DISABLING PREV/NEXT BTNS BASED ON INDEX
+  prevWorksButton.disabled = true;
+  if (currentPageIndex == PAGE_COUNT - 1) {
+    nextWorksButton.disabled = true;
+  }
+  updatePageNumner(currentPageIndex + 1, PAGE_COUNT);
 }
 
 window.addEventListener("DOMContentLoaded", main);
+
+//*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
