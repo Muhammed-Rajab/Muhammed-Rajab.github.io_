@@ -114,6 +114,11 @@ function generateProject({
 
   // Append the 'a' element to the title paragraph
   if (new_project) {
+    // const newTag = document.createElement("img");
+    // newTag.src = "/assets/images/new.gif";
+    // newTag.classList.add("new-tag");
+    // titleP.appendChild(newTag);
+
     // Create a new image element
     const gif = document.createElement("img");
     gif.src = "./assets/images/new-gif-smol.gif";
@@ -133,27 +138,27 @@ function generateProject({
 
   // WARN: might have to remove this in future.
   // Create the 'p' element for the tags
-  // const tagsP = document.createElement("p");
-  // tagsP.classList.add("tags");
-  // tagsP.appendChild(
-  //   document.createTextNode(tags.length > 1 ? "Tags: " : "Tag: "),
-  // );
-  //
-  // // Create the 'a' elements for the tags
-  // tags.forEach((tag) => {
-  //   const tagEl = document.createElement("span");
-  //   tagEl.disabled = true;
-  //   tagEl.href = "";
-  //   // tagEl.classList.add("");
-  //   tagEl.textContent = tag;
-  //   tagsP.appendChild(tagEl);
-  //   tagsP.innerHTML += "&nbsp;".repeat(2);
-  // });
+  const tagsP = document.createElement("p");
+  tagsP.classList.add("tags");
+  tagsP.appendChild(
+    document.createTextNode(tags.length > 1 ? "tags: " : "tag: "),
+  );
+
+  // Create the 'a' elements for the tags
+  tags.forEach((tag) => {
+    const tagEl = document.createElement("span");
+    tagEl.disabled = true;
+    tagEl.href = "";
+    // tagEl.classList.add("");
+    tagEl.textContent = tag;
+    tagsP.appendChild(tagEl);
+    tagsP.innerHTML += "&nbsp;".repeat(2);
+  });
 
   // Append all the elements to the project div
   projectDiv.appendChild(titleP);
   projectDiv.appendChild(descriptionP);
-  // projectDiv.appendChild(tagsP);
+  projectDiv.appendChild(tagsP);
 
   // Append the project div to the body (or another container element)
   return projectDiv;

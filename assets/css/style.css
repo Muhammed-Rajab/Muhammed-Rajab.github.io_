@@ -162,13 +162,11 @@ footer {
 }
 .works .works-container .project .description {
   margin-top: 0.25rem;
-  color: rgb(44, 44, 44);
+  color: #666;
 }
 .works .works-container .project .tags {
-  margin-top: 7px;
-}
-.works .works-container .project .tags span {
-  font-style: italic;
+  margin-top: 10px;
+  font-size: 0.85rem;
 }
 
 /*# sourceMappingURL=style.css.map */
