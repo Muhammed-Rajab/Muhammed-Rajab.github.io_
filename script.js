@@ -152,14 +152,18 @@ function updateWorksContainer(pageIndex = 0, category = "all") {
   const slicingEndIndex = pageIndex * MAX_WORKS_PER_PAGE + MAX_WORKS_PER_PAGE;
 
   if (category == "all") {
-    works
-      .slice(slicingStartIndex, slicingEndIndex)
-      .forEach((work) => worksContainer.appendChild(generateProject(work)));
+    works.slice(slicingStartIndex, slicingEndIndex).forEach((work) => {
+      worksContainer.appendChild(generateProject(work));
+      worksContainer.appendChild(document.createElement("hr"));
+    });
   } else {
     works
       .filter((work) => work.tags.includes(category))
       .slice(slicingStartIndex, slicingEndIndex)
-      .forEach((work) => worksContainer.appendChild(generateProject(work)));
+      .forEach((work) => {
+        worksContainer.appendChild(generateProject(work));
+        worksContainer.appendChild(document.createElement("hr"));
+      });
   }
 }
 
@@ -237,7 +241,7 @@ updatePageNumner(currentPageIndex + 1, PAGE_COUNT);
 //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 function main() {
-  updateWorksContainer(0, "go");
+  updateWorksContainer(0, "all");
 }
 
 window.addEventListener("DOMContentLoaded", main);

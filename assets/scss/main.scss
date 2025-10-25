@@ -1,5 +1,5 @@
-@import "defaults";
-@import "utils";
+@use "defaults" as *;
+@use"utils" as *;
 
 .section {
   max-width: 640px !important;
@@ -14,8 +14,7 @@
   flex-direction: column;
   row-gap: 1rem;
 
-  .name {
-  }
+  .name {}
 
   .hobby {
     margin-top: -8px;
@@ -45,10 +44,12 @@
 
       li {
         font-size: 1.2rem;
+
         a,
         a:visited {
           text-decoration: wavy;
           color: darkslateblue;
+
           &:hover {
             text-decoration: underline;
           }
@@ -107,17 +108,18 @@
       padding: 5px;
     }
 
-    button:disabled {
-    }
+    button:disabled {}
 
-    .prev-btn {
-    }
+    .prev-btn {}
 
-    .next-btn {
-    }
+    .next-btn {}
   }
 
   .works-container {
+    hr {
+      margin: 15px 0px;
+    }
+
     .project {
       margin-top: 0.5rem;
 
