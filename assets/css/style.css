@@ -100,7 +100,16 @@ footer {
   row-gap: 10px;
 }
 .works .works-categories button {
-  padding: 0 2px;
+  padding: 2px 5px;
+  color: white;
+  font-family: inherit;
+  background-color: transparent;
+  border: 1.5px solid gray;
+  border-radius: 8px;
+}
+.works .works-categories .bold-button {
+  background-color: white;
+  color: black;
 }
 .works .works-pagination {
   margin-top: 1rem;
