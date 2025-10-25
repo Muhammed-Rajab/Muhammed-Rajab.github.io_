@@ -112,7 +112,6 @@ footer {
   color: black;
 }
 .works .works-pagination {
-  margin-top: 1rem;
   text-align: center;
 }
 .works .works-navigator {
@@ -121,10 +120,15 @@ footer {
   justify-content: center;
   align-items: center;
   column-gap: 1rem;
-  margin-top: 1rem;
+  margin: 1.5rem 0rem;
 }
 .works .works-navigator button {
-  padding: 5px;
+  background-color: black;
+  color: white;
+  border: 1.5px solid gray;
+  padding: 3px 5px;
+  border-radius: 8px;
+  font-family: inherit;
 }
 .works .works-container {
   margin-top: 20px;
@@ -175,11 +179,12 @@ footer {
 }
 .works .works-container .project .description {
   margin-top: 0.25rem;
-  color: #666;
+  color: #888;
 }
 .works .works-container .project .tags {
   margin-top: 10px;
   font-size: 0.85rem;
+  color: #555;
 }
 
 /*# sourceMappingURL=style.css.map */
