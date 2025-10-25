@@ -48,7 +48,6 @@ const works = [
     under_development: false,
     new_project: true,
   },
-
   {
     title: "terrible-renderer.cpp",
     desc: "couldn't bother myself finding a better name",
@@ -79,9 +78,9 @@ const categories = [
 let currentPageIndex = 0;
 let currentCategory = "all";
 const MAX_WORKS_PER_PAGE = 4;
-const PAGE_COUNT = Math.ceil(works.length / MAX_WORKS_PER_PAGE);
+let PAGE_COUNT = Math.ceil(works.length / MAX_WORKS_PER_PAGE);
 
-function updatePageNumner(currentPageNo, pageCount) {
+function updatePageNumber(currentPageNo, pageCount) {
   pageNumberPara.innerHTML = `${currentPageNo} out of ${pageCount}`;
 }
 
@@ -156,9 +155,7 @@ function generateProject({
   // Create the 'a' elements for the tags
   tags.forEach((tag) => {
     const tagEl = document.createElement("span");
-    tagEl.disabled = true;
     tagEl.href = "";
-    // tagEl.classList.add("");
     tagEl.textContent = tag;
     tagsP.appendChild(tagEl);
     tagsP.innerHTML += "&nbsp;".repeat(2);
@@ -179,20 +176,21 @@ function updateWorksContainer(pageIndex = 0, category = "all") {
   const slicingStartIndex = pageIndex * MAX_WORKS_PER_PAGE;
   const slicingEndIndex = pageIndex * MAX_WORKS_PER_PAGE + MAX_WORKS_PER_PAGE;
 
-  if (category == "all") {
-    works.slice(slicingStartIndex, slicingEndIndex).forEach((work) => {
+  const filteredWorks =
+    category === "all"
+      ? works
+      : works.filter((work) => work.tags.includes(category));
+
+  // WARN: update page count here?
+  PAGE_COUNT = Math.ceil(filteredWorks.length / MAX_WORKS_PER_PAGE);
+
+  filteredWorks
+    .slice(slicingStartIndex, slicingEndIndex)
+    .forEach((work, i, arr) => {
       worksContainer.appendChild(generateProject(work));
-      worksContainer.appendChild(document.createElement("hr"));
-    });
-  } else {
-    works
-      .filter((work) => work.tags.includes(category))
-      .slice(slicingStartIndex, slicingEndIndex)
-      .forEach((work) => {
-        worksContainer.appendChild(generateProject(work));
+      if (i < arr.length - 1)
         worksContainer.appendChild(document.createElement("hr"));
-      });
-  }
+    });
 }
 
 // * ADD EACH CATEGORY TO WORKS CATEGORY
@@ -238,7 +236,7 @@ prevWorksButton.addEventListener("click", (e) => {
     nextWorksButton.disabled = false;
   }
 
-  updatePageNumner(currentPageIndex + 1, PAGE_COUNT);
+  updatePageNumber(currentPageIndex + 1, PAGE_COUNT);
 });
 
 nextWorksButton.addEventListener("click", (e) => {
@@ -259,7 +257,7 @@ nextWorksButton.addEventListener("click", (e) => {
     prevWorksButton.disabled = false;
   }
 
-  updatePageNumner(currentPageIndex + 1, PAGE_COUNT);
+  updatePageNumber(currentPageIndex + 1, PAGE_COUNT);
 });
 
 function main() {
@@ -269,7 +267,7 @@ function main() {
   if (currentPageIndex == PAGE_COUNT - 1) {
     nextWorksButton.disabled = true;
   }
-  updatePageNumner(currentPageIndex + 1, PAGE_COUNT);
+  updatePageNumber(currentPageIndex + 1, PAGE_COUNT);
 }
 
 window.addEventListener("DOMContentLoaded", main);
