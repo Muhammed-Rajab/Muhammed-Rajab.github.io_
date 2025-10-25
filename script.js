@@ -32,6 +32,22 @@ const works = [
     under_development: false,
     new_project: true,
   },
+  {
+    title: "terrible-renderer.cpp",
+    desc: "couldn't bother myself finding a better name",
+    tags: ["cpp", "ascii", "raymarching", "rendering", "cli"],
+    github: "https://github.com/Muhammed-Rajab/terrible-renderer.cpp",
+    under_development: false,
+    new_project: true,
+  },
+  {
+    title: "terrible-renderer.cpp",
+    desc: "couldn't bother myself finding a better name",
+    tags: ["cpp", "ascii", "raymarching", "rendering", "cli"],
+    github: "https://github.com/Muhammed-Rajab/terrible-renderer.cpp",
+    under_development: false,
+    new_project: true,
+  },
 ];
 
 //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -47,12 +63,12 @@ const worksCategoriesContainer = document.querySelector(".works-categories");
 const categories = [
   "all",
   ...new Set(
-    works.map((work) => work.tags).reduce((acc, curr) => [...acc, ...curr])
+    works.map((work) => work.tags).reduce((acc, curr) => [...acc, ...curr]),
   ),
 ];
 
 let currentPageIndex = 0;
-let currentCategory = "all";
+let currentCategory = "go";
 const MAX_WORKS_PER_PAGE = 5;
 const PAGE_COUNT = Math.ceil(works.length / MAX_WORKS_PER_PAGE);
 
@@ -106,7 +122,7 @@ function generateProject({
   const tagsP = document.createElement("p");
   tagsP.classList.add("tags");
   tagsP.appendChild(
-    document.createTextNode(tags.length > 1 ? "Tags: " : "Tag: ")
+    document.createTextNode(tags.length > 1 ? "Tags: " : "Tag: "),
   );
 
   // Create the 'a' elements for the tags
@@ -167,11 +183,9 @@ categories.forEach((category) => {
   }
   worksCategoriesContainer.appendChild(btn);
   worksCategoriesContainer.appendChild(
-    document.createTextNode("\u00A0".repeat(2))
+    document.createTextNode("\u00A0".repeat(2)),
   );
 });
-
-updateWorksContainer(0, "all");
 
 prevWorksButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -221,3 +235,9 @@ if (currentPageIndex == PAGE_COUNT - 1) {
 }
 updatePageNumner(currentPageIndex + 1, PAGE_COUNT);
 //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+function main() {
+  updateWorksContainer(0, "go");
+}
+
+window.addEventListener("DOMContentLoaded", main);
