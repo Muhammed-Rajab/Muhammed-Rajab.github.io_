@@ -38,10 +38,16 @@
         a,
         a:visited {
           fill: #ffffee;
+          display: inline-block; // ensures transform works properly
 
           svg {
             width: 32px;
             height: 32px;
+            transition: transform 0.2s ease; // smooth scaling
+          }
+
+          &:hover svg {
+            transform: scale(1.1); // scale up 10% on hover
           }
         }
       }
@@ -83,6 +89,15 @@
       background-color: transparent;
       border: 1.5px solid gray;
       border-radius: 8px;
+
+      cursor: pointer;
+      transition: all 0.2s ease; // smooth hover transition
+
+      &:hover {
+        background-color: white; // inverted background
+        color: black; // inverted text
+        border-color: black; // optional: match text color
+      }
     }
 
     .bold-button {
@@ -110,6 +125,15 @@
       padding: 3px 5px;
       border-radius: 8px;
       font-family: inherit;
+
+      cursor: pointer;
+      transition: all 0.2s ease; // smooth hover transition
+
+      &:hover {
+        background-color: white; // inverted background
+        color: black; // inverted text
+        border-color: black; // optional: match text color
+      }
     }
 
     button:disabled {}

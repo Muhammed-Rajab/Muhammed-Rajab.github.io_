@@ -71,11 +71,17 @@ footer {
 .header .navbar ul li a,
 .header .navbar ul li a:visited {
   fill: #ffffee;
+  display: inline-block;
 }
 .header .navbar ul li a svg,
 .header .navbar ul li a:visited svg {
   width: 32px;
   height: 32px;
+  transition: transform 0.2s ease;
+}
+.header .navbar ul li a:hover svg,
+.header .navbar ul li a:visited:hover svg {
+  transform: scale(1.1);
 }
 
 .about-me p:first-child {
@@ -106,6 +112,13 @@ footer {
   background-color: transparent;
   border: 1.5px solid gray;
   border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.works .works-categories button:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
 }
 .works .works-categories .bold-button {
   background-color: white;
@@ -129,6 +142,13 @@ footer {
   padding: 3px 5px;
   border-radius: 8px;
   font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.works .works-navigator button:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
 }
 .works .works-container {
   margin-top: 20px;
