@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 html,
@@ -84,14 +85,41 @@ footer {
   transform: scale(1.1);
 }
 
-.about-me p:first-child {
-  margin-top: 1rem;
+.blogs .blogs-container {
+  margin-top: 0.75rem;
 }
-
-.skills li,
-.learning li {
+.blogs .blogs-container ul {
+  display: flex;
+  row-gap: 1rem;
+  list-style: none;
   list-style-position: inside;
-  list-style-type: circle;
+  padding: 0;
+  flex-direction: column;
+}
+.blogs .blogs-container ul li::marker {
+  content: "⊹₊ ";
+  color: lightpink;
+  font-weight: bold;
+}
+.blogs .blogs-container ul li a {
+  color: white;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  /* adds the squiggly effect */
+  text-decoration-color: lightpink;
+  /* optional color */
+  text-underline-offset: 6.5px;
+  text-decoration-thickness: 2px;
+  line-height: 2rem;
+}
+.blogs .blogs-container ul li a:hover {
+  text-decoration-color: hotpink;
+}
+.blogs .blogs-container ul li a:visited {
+  text-decoration-color: #1e90ff;
+}
+.blogs .more-blogs {
+  margin-top: 1rem;
 }
 
 .works li {

@@ -55,18 +55,62 @@
   }
 }
 
-.about-me {
-  p:first-child {
+
+.blogs {
+  .blogs-heading {}
+
+  .blogs-container {
+    margin-top: .75rem;
+
+    ul {
+      display: flex; // or grid
+      row-gap: 1rem; // adjust spacing
+      list-style: none; // optional
+
+      list-style-position: inside;
+
+      padding: 0;
+      flex-direction: column;
+
+      li::marker {
+        content: "⊹₊ ";
+        color: lightpink; // optional color for the x
+        font-weight: bold;
+      }
+
+      li {
+        a {
+          color: white;
+          text-decoration-line: underline;
+          text-decoration-style: wavy;
+          /* adds the squiggly effect */
+          // text-decoration-color: #1e90ff;
+          text-decoration-color: lightpink;
+          /* optional color */
+          text-underline-offset: 6.5px; // optional spacing
+          text-decoration-thickness: 2px;
+          line-height: 2rem;
+
+
+          &:hover {
+            text-decoration-color: hotpink;
+          }
+
+          &:visited {
+            text-decoration-color: #1e90ff;
+          }
+
+
+        }
+
+      }
+    }
+  }
+
+  .more-blogs {
     margin-top: 1rem;
   }
-}
 
-.skills,
-.learning {
-  li {
-    list-style-position: inside;
-    list-style-type: circle;
-  }
 }
 
 .works {
