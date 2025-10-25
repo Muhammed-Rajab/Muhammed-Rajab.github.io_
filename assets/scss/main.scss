@@ -1,6 +1,7 @@
 @use "defaults" as *;
 @use"utils" as *;
 
+
 .section {
   max-width: 640px !important;
   width: 100%;
@@ -14,26 +15,13 @@
   flex-direction: column;
   row-gap: 1rem;
 
-  .name {}
+  .name {
+    font-size: 3rem;
+  }
 
   .hobby {
     margin-top: -8px;
-  }
-
-  .image-container {
-    border: 3px solid black;
-    border-style: groove;
-    width: 100%;
-    max-width: 512px;
-    height: 400px;
-    background-image: url(/assets/images/ray.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .image-text {
-    text-align: center;
+    color: dimgray;
   }
 
   .navbar {
@@ -41,17 +29,19 @@
       list-style-type: none;
       display: flex;
       width: fit-content;
+      column-gap: 15px;
 
       li {
         font-size: 1.2rem;
+        fill: white;
 
         a,
         a:visited {
-          text-decoration: wavy;
-          color: darkslateblue;
+          fill: #ffffee;
 
-          &:hover {
-            text-decoration: underline;
+          svg {
+            width: 32px;
+            height: 32px;
           }
         }
       }
