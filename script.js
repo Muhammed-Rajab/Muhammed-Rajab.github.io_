@@ -186,6 +186,8 @@ categories.forEach((category) => {
     btn.classList.add("bold-button");
   }
   worksCategoriesContainer.appendChild(btn);
+
+  // TODO: add tooltip hover data
   worksCategoriesContainer.appendChild(
     document.createTextNode("\u00A0".repeat(2)),
   );

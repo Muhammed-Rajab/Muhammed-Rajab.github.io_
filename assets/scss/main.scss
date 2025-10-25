@@ -117,7 +117,9 @@
 
   .works-container {
     hr {
-      margin: 15px 0px;
+      margin: 15px 5px;
+      height: 0.5px;
+      border: 0.5px solid #333;
     }
 
     .project {
