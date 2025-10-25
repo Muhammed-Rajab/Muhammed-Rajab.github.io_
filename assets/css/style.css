@@ -155,6 +155,19 @@ footer {
   font-size: 1.5rem;
   text-decoration: none;
   font-weight: 700;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  /* adds the squiggly effect */
+  text-decoration-color: lightpink;
+  /* optional color */
+  text-underline-offset: 6.5px;
+  text-decoration-thickness: 2px;
+}
+.works .works-container .project .title a:hover {
+  text-decoration-color: hotpink;
+}
+.works .works-container .project .title a:visited {
+  text-decoration-color: #1e90ff;
 }
 .works .works-container .project .title .new-tag {
   width: 28px;
