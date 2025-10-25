@@ -72,6 +72,7 @@
       padding: 0;
       flex-direction: column;
 
+
       li::marker {
         content: "⊹₊ ";
         color: lightpink; // optional color for the x
@@ -109,6 +110,30 @@
 
   .more-blogs {
     margin-top: 1rem;
+
+    a {
+      color: lightpink;
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+      /* adds the squiggly effect */
+      // text-decoration-color: #1e90ff;
+      text-decoration-color: lightpink;
+      /* optional color */
+      text-underline-offset: 6.5px; // optional spacing
+      text-decoration-thickness: 2px;
+      line-height: 2rem;
+
+
+      &:hover {
+        text-decoration-color: hotpink;
+      }
+
+      &:visited {
+        text-decoration-color: hotpink;
+      }
+
+
+    }
   }
 
 }

@@ -121,6 +121,23 @@ footer {
 .blogs .more-blogs {
   margin-top: 1rem;
 }
+.blogs .more-blogs a {
+  color: lightpink;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  /* adds the squiggly effect */
+  text-decoration-color: lightpink;
+  /* optional color */
+  text-underline-offset: 6.5px;
+  text-decoration-thickness: 2px;
+  line-height: 2rem;
+}
+.blogs .more-blogs a:hover {
+  text-decoration-color: hotpink;
+}
+.blogs .more-blogs a:visited {
+  text-decoration-color: hotpink;
+}
 
 .works li {
   list-style-position: inside;
