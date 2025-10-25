@@ -126,6 +126,9 @@ footer {
 .works .works-navigator button {
   padding: 5px;
 }
+.works .works-container {
+  margin-top: 20px;
+}
 .works .works-container hr {
   margin: 20px 0px;
   height: 0.5px;
@@ -138,14 +141,18 @@ footer {
   color: red !important;
 }
 .works .works-container .project .title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: gray;
   display: flex;
   justify-content: start;
   align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  color: pink;
 }
 .works .works-container .project .title a {
-  color: black;
+  color: white;
+  font-size: 1.5rem;
   text-decoration: none;
   font-weight: 700;
 }

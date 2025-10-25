@@ -91,7 +91,10 @@ function generateProject({
   // Create the 'p' element for the title
   const titleP = document.createElement("p");
   titleP.classList.add("title");
-  titleP.appendChild(document.createTextNode("["));
+
+  const lspan = document.createElement("span");
+  lspan.innerText = "⚞";
+  titleP.appendChild(lspan);
 
   // Create the 'a' element with the link
   const linkA = document.createElement("a");
@@ -103,14 +106,24 @@ function generateProject({
   linkA.target = "_blank";
   linkA.textContent = `${title}`;
 
-  // Append the 'a' element to the title paragraph
   titleP.appendChild(linkA);
-  titleP.appendChild(document.createTextNode("]"));
+
+  const rspan = document.createElement("span");
+  rspan.innerText = "⚟";
+  titleP.appendChild(rspan);
+
+  // Append the 'a' element to the title paragraph
   if (new_project) {
-    const newTag = document.createElement("img");
-    newTag.src = "/assets/images/new.gif";
-    newTag.classList.add("new-tag");
-    titleP.appendChild(newTag);
+    // Create a new image element
+    const gif = document.createElement("img");
+    gif.src = "./assets/images/new-gif-smol.gif";
+    gif.alt = "new gif";
+
+    // Optional: add some styles
+    gif.style.width = "32px"; // set width
+    gif.style.height = "auto"; // keep aspect ratio
+
+    titleP.appendChild(gif);
   }
 
   // Create the 'p' element for the description

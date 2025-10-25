@@ -116,6 +116,8 @@
   }
 
   .works-container {
+    margin-top: 20px;
+
     hr {
       margin: 20px 0px;
       height: 0.5px;
@@ -130,15 +132,20 @@
       }
 
       .title {
-        font-size: 1.2rem;
+        font-size: 1rem;
         color: gray;
 
         display: flex;
         justify-content: start;
         align-items: center;
+        text-align: center;
+        vertical-align: middle;
+
+        color: pink;
 
         a {
-          color: black;
+          color: white;
+          font-size: 1.5rem;
           text-decoration: none;
           font-weight: 700;
         }
