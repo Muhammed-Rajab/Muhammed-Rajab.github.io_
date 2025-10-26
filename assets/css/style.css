@@ -88,23 +88,17 @@ footer {
 .blogs .container {
   margin-top: 0.75rem;
 }
-.blogs .container ul {
-  display: flex;
-  row-gap: 1rem;
-  list-style: none;
-  list-style-position: inside;
-  padding: 0;
-  flex-direction: column;
-}
-.blogs .container ul li::marker {
-  content: "⊹₊ ";
-  color: lightpink;
-  font-weight: bold;
-}
 .blogs .container ul li {
   display: flex;
   column-gap: 0.5rem;
   width: fit-content;
+  justify-content: center;
+  align-items: center;
+}
+.blogs .container ul li::before {
+  content: "⊹₊ ";
+  color: lightpink;
+  font-weight: bold;
 }
 .blogs .container ul li a {
   color: white;

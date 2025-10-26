@@ -16,16 +16,7 @@ const InitializeBlogsSection = () => {
   const blogs = [
     {
       title: "I Miss The Good Ol' Telnet Days - So I Built My Own Server",
-      link: "lol",
-      new: true,
-    },
-    {
-      title: "How I wrote a silly CHIP-8 emulator in C++",
-      link: "so-silly",
-    },
-    {
-      title: "Ray Tracing isn't that hard - if you do it the right way!",
-      link: "duh",
+      link: "/blog/posts/i-miss-the-old-telnet-days-so-i-built-my-own-server/",
       new: true,
     },
   ];
