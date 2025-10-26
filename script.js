@@ -402,5 +402,9 @@ const InitializeProjectsSection = () => {
   })(); // main iife
 };
 
-window.addEventListener("DOMContentLoaded", () => InitializeBlogsSection());
-window.addEventListener("DOMContentLoaded", () => InitializeProjectsSection());
+// initialize both sections only after loading the DOM content
+// since both of em heavily relies on it
+window.addEventListener("DOMContentLoaded", () => {
+  InitializeBlogsSection();
+  InitializeProjectsSection();
+});
