@@ -30,7 +30,9 @@ const InitializeBlogsSection = () => {
     },
   ];
 
-  const blogsList = document.querySelector(".blogs-list");
+  const blogsList = document.querySelector(".blogs > .container > ul");
+
+  console.log(blogsList);
 
   function createBlogItem(href, text, new_post = false) {
     const li = document.createElement("li");

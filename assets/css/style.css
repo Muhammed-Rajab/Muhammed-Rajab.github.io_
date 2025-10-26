@@ -85,10 +85,10 @@ footer {
   transform: scale(1.1);
 }
 
-.blogs .blogs-container {
+.blogs .container {
   margin-top: 0.75rem;
 }
-.blogs .blogs-container ul {
+.blogs .container ul {
   display: flex;
   row-gap: 1rem;
   list-style: none;
@@ -96,17 +96,17 @@ footer {
   padding: 0;
   flex-direction: column;
 }
-.blogs .blogs-container ul li::marker {
+.blogs .container ul li::marker {
   content: "⊹₊ ";
   color: lightpink;
   font-weight: bold;
 }
-.blogs .blogs-container ul li {
+.blogs .container ul li {
   display: flex;
   column-gap: 0.5rem;
   width: fit-content;
 }
-.blogs .blogs-container ul li a {
+.blogs .container ul li a {
   color: white;
   text-decoration-line: underline;
   text-decoration-style: wavy;
@@ -117,16 +117,16 @@ footer {
   text-decoration-thickness: 2px;
   line-height: 2rem;
 }
-.blogs .blogs-container ul li a:hover {
+.blogs .container ul li a:hover {
   text-decoration-color: hotpink;
 }
-.blogs .blogs-container ul li a:visited {
+.blogs .container ul li a:visited {
   text-decoration-color: #1e90ff;
 }
-.blogs .blogs-container ul li {
+.blogs .container ul li {
   transition: transform 0.2s ease;
 }
-.blogs .blogs-container ul li:hover {
+.blogs .container ul li:hover {
   transform: scale(1.005);
 }
 .blogs .more-blogs {
