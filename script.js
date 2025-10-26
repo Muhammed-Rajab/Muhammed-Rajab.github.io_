@@ -75,12 +75,22 @@
   window.addEventListener("DOMContentLoaded", updateBlogsList);
 })();
 
-/* [[WORKS: lol, bunch of jr. DEV projects]] */
+/* [[Projects: lol, a bunch of jr. DEV projects]] */
 (() => {
   /*
-   * NOTE: update this
+   * NOTE: update this array to add or remove projects.
+   *
+   * SCHEMA:
+   * {
+   *  title:              string,   // project title
+   *  desc:               string,   // project description
+   *  tags:               string[], // tags associated
+   *  github:             string,   // github repo url
+   *  under_development:  boolean?, // whether it's still under development  TODO: add gif
+   *  new_project:        boolean?  // whether it's a new project (adds gif)
+   * }
    * */
-  const works = [
+  const projects = [
     {
       title: "file-boy",
       desc: "a no-BS encryption/decryption CLI, made with golang. It allows you to encrypt and decrypt files or entire directories with ease",
