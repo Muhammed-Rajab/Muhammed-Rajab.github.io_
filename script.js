@@ -419,7 +419,7 @@ const RevealSecret = () => {
     let currentFrame = 0;
 
     setInterval(() => {
-      console.clear(); // optional: clear previous frame
+      console.clear();
       console.log(
         "%c ",
         `
@@ -430,7 +430,7 @@ const RevealSecret = () => {
     `,
       );
       currentFrame = (currentFrame + 1) % frames.length;
-    }, 500); // 500ms per frame
+    }, 500);
   };
 };
 
