@@ -1,4 +1,68 @@
 //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{
+  /*
+   * Blogs
+   */
+
+  const blogs = [
+    {
+      title: "I Miss The Good Ol' Telnet Days - So I Built My Own Server",
+      link: "lol",
+    },
+    {
+      title: "How I wrote a silly CHIP-8 emulator in C++",
+      link: "so-silly",
+    },
+    {
+      title: "Ray Tracing isn't that hard - if you do it the right way!",
+      link: "duh",
+      new: true,
+    },
+  ];
+
+  const blogsList = document.querySelector(".blogs-list");
+
+  function createBlogItem(href, text, new_post = false) {
+    // Create the <li> element
+    const li = document.createElement("li");
+    li.className = "blog";
+
+    // Create the <a> element
+    const a = document.createElement("a");
+    a.href = href;
+    a.className = "blog-link";
+    a.target = "_blank";
+    a.textContent = text;
+
+    // Nest <a> inside <li>
+    li.appendChild(a);
+
+    if (new_post) {
+      const gif = document.createElement("img");
+      gif.src = "./assets/images/new-gif-smol.gif";
+      gif.alt = "new gif";
+
+      gif.style.width = "32px"; // set width
+      gif.style.height = "auto"; // keep aspect ratio
+
+      // Nest <img> inside <li>
+      li.appendChild(gif);
+    }
+
+    return li;
+  }
+
+  function updateBlogsList() {
+    blogsList.innerHTML = "";
+    blogs.forEach((blog) => {
+      blogsList.appendChild(createBlogItem(blog.link, blog.title, blog.new));
+    });
+  }
+
+  window.addEventListener("DOMContentLoaded", updateBlogsList);
+}
+
+//*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 const works = [
   {
     title: "file-boy",

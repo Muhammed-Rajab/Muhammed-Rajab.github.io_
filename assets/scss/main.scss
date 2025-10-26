@@ -80,6 +80,9 @@
       }
 
       li {
+
+        display: flex;
+        column-gap: .5rem;
         width: fit-content;
 
         a {

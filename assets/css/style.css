@@ -102,6 +102,8 @@ footer {
   font-weight: bold;
 }
 .blogs .blogs-container ul li {
+  display: flex;
+  column-gap: 0.5rem;
   width: fit-content;
 }
 .blogs .blogs-container ul li a {
