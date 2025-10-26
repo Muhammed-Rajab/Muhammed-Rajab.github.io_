@@ -188,7 +188,12 @@
     pageNumberPara.innerHTML = `${currentPageNo} out of ${pageCount}`;
   }
 
-  function generateProject({
+  /**********************
+   * DOM CREATION HELPERS
+   *********************/
+
+  // project list item
+  function createProjectListItem({
     title = "",
     desc = "",
     tags = [],
@@ -226,20 +231,12 @@
 
     // Append the 'a' element to the title paragraph
     if (new_project) {
-      // const newTag = document.createElement("img");
-      // newTag.src = "/assets/images/new.gif";
-      // newTag.classList.add("new-tag");
-      // titleP.appendChild(newTag);
-
-      // Create a new image element
       const gif = document.createElement("img");
       gif.src = "./assets/images/new-gif-smol.gif";
       gif.alt = "new gif";
 
-      // Optional: add some styles
-      gif.style.width = "32px"; // set width
-      gif.style.height = "auto"; // keep aspect ratio
-
+      gif.style.width = "32px";
+      gif.style.height = "auto";
       titleP.appendChild(gif);
     }
 
@@ -248,7 +245,6 @@
     descriptionP.classList.add("description");
     descriptionP.textContent = desc;
 
-    // WARN: might have to remove this in future.
     // Create the 'p' element for the tags
     const tagsP = document.createElement("p");
     tagsP.classList.add("tags");
