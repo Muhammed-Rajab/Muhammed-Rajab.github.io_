@@ -93,6 +93,14 @@ const InitializeProjectsSection = () => {
    *************************************/
   const projects = [
     {
+      title: "chip8.cpp",
+      desc: "A modern C++ implementation of the classic CHIP-8 system including an emulator, an assembler and a disassembler.",
+      tags: ["c++", "graphic"],
+      github: "https://github.com/Muhammed-Rajab/file-boy",
+      under_development: false,
+      new_project: true,
+    },
+    {
       title: "file-boy",
       desc: "a no-BS encryption/decryption CLI, made with golang. It allows you to encrypt and decrypt files or entire directories with ease",
       tags: ["go", "cli"],
@@ -103,7 +111,7 @@ const InitializeProjectsSection = () => {
     {
       title: "img2ascii.cpp",
       desc: "convert your images🖼️ to ASCII art🎨 instantly with img2ascii.cpp!",
-      tags: ["cpp", "cli"],
+      tags: ["c++", "cli"],
       github: "https://github.com/Muhammed-Rajab/img2ascii.cpp/",
       under_development: false,
       new_project: false,
@@ -111,7 +119,7 @@ const InitializeProjectsSection = () => {
     {
       title: "camouflage.cpp",
       desc: "a fun and visual🦎 way to see natural selection in action!",
-      tags: ["cpp", "raylib", "genetic algoritm"],
+      tags: ["c++", "graphic"],
       github: "https://github.com/Muhammed-Rajab/camouflage.cpp",
       under_development: false,
       new_project: false,
@@ -119,34 +127,10 @@ const InitializeProjectsSection = () => {
     {
       title: "terrible-renderer.cpp",
       desc: "couldn't bother myself finding a better name",
-      tags: ["cpp", "ascii", "raymarching", "rendering", "cli"],
+      tags: ["c++", "cli", "graphic"],
       github: "https://github.com/Muhammed-Rajab/terrible-renderer.cpp",
       under_development: false,
-      new_project: true,
-    },
-    {
-      title: "terrible-renderer.cpp",
-      desc: "couldn't bother myself finding a better name",
-      tags: ["cpp", "ascii", "raymarching", "rendering", "cli"],
-      github: "https://github.com/Muhammed-Rajab/terrible-renderer.cpp",
-      under_development: false,
-      new_project: true,
-    },
-    {
-      title: "terrible-renderer.cpp",
-      desc: "couldn't bother myself finding a better name",
-      tags: ["cpp", "ascii", "raymarching", "rendering", "cli"],
-      github: "https://github.com/Muhammed-Rajab/terrible-renderer.cpp",
-      under_development: false,
-      new_project: true,
-    },
-    {
-      title: "terrible-renderer.cpp",
-      desc: "couldn't bother myself finding a better name",
-      tags: ["cpp", "ascii", "raymarching", "rendering", "cli"],
-      github: "https://github.com/Muhammed-Rajab/terrible-renderer.cpp",
-      under_development: false,
-      new_project: true,
+      new_project: false,
     },
   ];
 
