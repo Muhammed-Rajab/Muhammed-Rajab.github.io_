@@ -93,6 +93,8 @@ const InitializeProjectsSection = () => {
    *  under_development:  boolean?, // whether it's still under development  TODO: add gif
    *  new_project:        boolean?  // whether it's a new project (adds gif)
    * }
+   *
+   * maybe add priority??? so it would show important stuff in the beginning?
    * */
 
   /**************************************
