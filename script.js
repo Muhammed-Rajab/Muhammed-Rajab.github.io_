@@ -101,6 +101,14 @@ const InitializeProjectsSection = () => {
       new_project: true,
     },
     {
+      title: "fretty mercury",
+      desc: "A silly guitar fretboard visualizer written in Lua 🎸💖",
+      tags: ["lua", "music", "cli"],
+      github: "https://github.com/Muhammed-Rajab/fretty-mercury",
+      under_development: true,
+      new_project: true,
+    },
+    {
       title: "file-boy",
       desc: "a no-BS encryption/decryption CLI, made with golang. It allows you to encrypt and decrypt files or entire directories with ease",
       tags: ["go", "cli"],
@@ -196,9 +204,7 @@ const InitializeProjectsSection = () => {
     // Create the 'a' element with the link
     const linkA = document.createElement("a");
     linkA.classList.add("work-link");
-    if (under_development) {
-      linkA.classList.add("under-development");
-    }
+
     linkA.href = github;
     linkA.target = "_blank";
     linkA.textContent = `${title}`;
@@ -209,13 +215,22 @@ const InitializeProjectsSection = () => {
     rspan.innerText = "⚟";
     titleP.appendChild(rspan);
 
-    // Append the 'a' element to the title paragraph
     if (new_project) {
       const gif = document.createElement("img");
       gif.src = "./assets/images/new-gif-smol.gif";
-      gif.alt = "new gif";
+      gif.alt = "";
 
       gif.style.width = "32px";
+      gif.style.height = "auto";
+      titleP.appendChild(gif);
+    }
+
+    if (under_development) {
+      const gif = document.createElement("img");
+      gif.src = "./assets/images/under-construction-smol.gif";
+      gif.alt = "";
+
+      gif.style.width = "52px";
       gif.style.height = "auto";
       titleP.appendChild(gif);
     }
