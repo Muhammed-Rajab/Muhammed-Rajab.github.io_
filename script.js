@@ -177,16 +177,15 @@
   );
 
   // extract all tags
-  const categories = ["all", ...new Set(projects.flatMap((work) => work.tags))];
+  const categories = [
+    "all",
+    ...new Set(projects.flatMap((project) => project.tags)),
+  ];
 
   let currentPageIndex = 0;
   let currentCategory = "all";
-  const MAX_WORKS_PER_PAGE = 4;
-  let PAGE_COUNT = Math.ceil(works.length / MAX_WORKS_PER_PAGE);
-
-  function updatePageNumber(currentPageNo, pageCount) {
-    pageNumberPara.innerHTML = `${currentPageNo} out of ${pageCount}`;
-  }
+  const MAX_PROJECTS_PER_PAGE = 4;
+  let pageCount = Math.ceil(projects.length / MAX_PROJECTS_PER_PAGE);
 
   /**********************
    * DOM CREATION HELPERS
@@ -270,110 +269,111 @@
     return projectDiv;
   }
 
+  function createProjectCategoryButton(category, onClick) {
+    const btn = document.createElement("button");
+    btn.textContent = category;
+    btn.classList.toggle("bold-button", category === "all");
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      onClick(category, btn);
+    });
+    return btn;
+  }
+
+  /*********
+   * HELPERS
+   ********/
+  function filterProjectsByCategory(projects, category) {
+    return category === "all"
+      ? projects
+      : projects.filter((project) => project.tags.includes(category));
+  }
+
+  function paginate(projects, pageIndex, perPage) {
+    const start = pageIndex * perPage;
+    return projects.slice(start, start + perPage);
+  }
+
+  /****************
+   * EVENT HANDLERS
+   ***************/
+  function handleCategoryClick(category, btn) {
+    currentCategory = category;
+    currentPageIndex = 0;
+
+    console.log("current page index:", currentPageIndex);
+    console.log("current category:", currentCategory);
+    console.log("page count:", pageCount);
+
+    // reset highlight
+    projectCategoriesContainer
+      .querySelectorAll("button")
+      .forEach((b) => b.classList.remove("bold-button"));
+
+    btn.classList.add("bold-button");
+    updateProjectsContainer(currentPageIndex, currentCategory);
+
+    // TODO: update the page count
+    // TODO: update the page numbers?
+  }
+
   /**********************
    * RENDERING & UPDATION
    *********************/
 
-  // * FUNCTION TO SHOW WORKS BASED ON PAGE NUMBER AND CATEGORY
-  function updateWorksContainer(pageIndex = 0, category = "all") {
-    worksContainer.innerHTML = "";
-    const slicingStartIndex = pageIndex * MAX_WORKS_PER_PAGE;
-    const slicingEndIndex = pageIndex * MAX_WORKS_PER_PAGE + MAX_WORKS_PER_PAGE;
-
-    const filteredWorks =
-      category === "all"
-        ? works
-        : works.filter((work) => work.tags.includes(category));
-
-    // WARN: update page count here?
-    PAGE_COUNT = Math.ceil(filteredWorks.length / MAX_WORKS_PER_PAGE);
-
-    filteredWorks
-      .slice(slicingStartIndex, slicingEndIndex)
-      .forEach((work, i, arr) => {
-        worksContainer.appendChild(generateProject(work));
-        if (i < arr.length - 1)
-          worksContainer.appendChild(document.createElement("hr"));
-      });
+  // page number update
+  function updatePageNumber(currentPageIndex, pageCount) {
+    paginationParagraph.innerHTML = `${currentPageIndex + 1} out of ${pageCount}`;
   }
 
-  // * ADD EACH CATEGORY TO WORKS CATEGORY
-  categories.forEach((category) => {
-    const btn = document.createElement("button");
-    btn.innerText = `${category}`;
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      currentCategory = category;
+  // render the projects
+  function renderProjects(projects) {
+    // NOTE: unnecessary optimization #2
+    const fragment = document.createDocumentFragment();
 
-      worksCategoriesContainer.querySelectorAll("button").forEach((button) => {
-        button.classList.remove("bold-button");
-      });
-
-      btn.classList.add("bold-button");
-      updateWorksContainer(0, currentCategory);
+    projects.forEach((project, i, arr) => {
+      fragment.append(createProjectListItem(project));
+      // add <hr/> if not the last project
+      if (i < arr.length - 1) fragment.append(document.createElement("hr"));
     });
-    if (category === "all") {
-      btn.classList.add("bold-button");
-    }
-    worksCategoriesContainer.appendChild(btn);
 
-    // TODO: add tooltip hover data
-    worksCategoriesContainer.appendChild(
-      document.createTextNode("\u00A0".repeat(2)),
-    );
-  });
-
-  prevWorksButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (currentPageIndex != 0) {
-      currentPageIndex -= 1;
-      updateWorksContainer(currentPageIndex, currentCategory);
-    }
-
-    // * DISABLE PREV BTN
-    if (currentPageIndex == 0) {
-      prevWorksButton.disabled = true;
-    }
-
-    // * ENABLE NEXT BTN
-    if (currentPageIndex < PAGE_COUNT - 1) {
-      nextWorksButton.disabled = false;
-    }
-
-    updatePageNumber(currentPageIndex + 1, PAGE_COUNT);
-  });
-
-  nextWorksButton.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    if (currentPageIndex < PAGE_COUNT - 1) {
-      currentPageIndex += 1;
-      updateWorksContainer(currentPageIndex, currentCategory);
-    }
-
-    // * DISABLE NEXT
-    if (currentPageIndex == PAGE_COUNT - 1) {
-      nextWorksButton.disabled = true;
-    }
-
-    // * ENABLE PREV BTN
-    if (currentPageIndex > 0) {
-      prevWorksButton.disabled = false;
-    }
-
-    updatePageNumber(currentPageIndex + 1, PAGE_COUNT);
-  });
-
-  function main() {
-    updateWorksContainer(currentPageIndex, currentCategory);
-    //* ENABLING/DISABLING PREV/NEXT BTNS BASED ON INDEX
-    prevWorksButton.disabled = true;
-    if (currentPageIndex == PAGE_COUNT - 1) {
-      nextWorksButton.disabled = true;
-    }
-    updatePageNumber(currentPageIndex + 1, PAGE_COUNT);
+    projectsContainer.innerHTML = "";
+    projectsContainer.append(fragment);
   }
 
-  window.addEventListener("DOMContentLoaded", main);
-})();
+  // update projects list based on page number
+  function updateProjectsContainer(pageIndex = 0, category = "all") {
+    const filtered = filterProjectsByCategory(projects, category);
+    const paginated = paginate(filtered, pageIndex, MAX_PROJECTS_PER_PAGE);
+
+    // TODO: update page count here, as it will always be called when changing category or page
+    pageCount = Math.ceil(filtered.length / MAX_PROJECTS_PER_PAGE);
+    renderProjects(paginated);
+
+    updatePageNumber(pageIndex, pageCount);
+  }
+
+  // * render categories buttons
+  function renderProjectCategoriesBtns() {
+    const fragment = document.createDocumentFragment();
+
+    categories.forEach((category) => {
+      const btn = createProjectCategoryButton(category, handleCategoryClick);
+      fragment.append(btn, document.createTextNode("\u00A0".repeat(2)));
+    });
+
+    projectCategoriesContainer.innerHTML = "";
+    projectCategoriesContainer.append(fragment);
+  }
+
+  // * handle press on prev and next btn
+
+  // main iife, if __name__ == "__main__": # lol
+  (() => {
+    window.addEventListener("DOMContentLoaded", () => {
+      renderProjectCategoriesBtns();
+      updateProjectsContainer(currentPageIndex, currentCategory);
+    });
+  })(); // main iife
+})(); // projects block iife
 //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
