@@ -1,5 +1,5 @@
 /* [[ BLOGS: i rarely write, lol]] */
-(() => {
+const InitializeBlogsSection = () => {
   /*
    * NOTE: update this list to add or remove blogs from homepage.
    * yes, i know it's too much manual work.
@@ -71,12 +71,14 @@
     blogsList.appendChild(fragment);
   }
 
-  // update the list after all the dom content is loaded
-  window.addEventListener("DOMContentLoaded", updateBlogsList);
-})();
+  // main iife, keeps things clean
+  (() => {
+    updateBlogsList();
+  })(); // main iife
+};
 
 /* [[Projects: lol, a bunch of jr. DEV projects]] */
-(() => {
+const InitializeProjectsSection = () => {
   /*
    * NOTE: update this array to add or remove projects.
    *
@@ -326,6 +328,12 @@
     paginationParagraph.innerHTML = `${currentPageIndex + 1} out of ${pageCount}`;
   }
 
+  // pagination button update
+  function updatePaginationButtons() {
+    prevProjectsBtn.disabled = currentPageIndex === 0;
+    nextProjectsBtn.disabled = currentPageIndex >= pageCount - 1;
+  }
+
   // render the projects
   function renderProjects(projects) {
     // NOTE: unnecessary optimization #2
@@ -350,7 +358,11 @@
     pageCount = Math.ceil(filtered.length / MAX_PROJECTS_PER_PAGE);
     renderProjects(paginated);
 
+    // ui update
     updatePageNumber(pageIndex, pageCount);
+
+    // figure update
+    updatePaginationButtons();
   }
 
   // * render categories buttons
@@ -367,13 +379,28 @@
   }
 
   // * handle press on prev and next btn
+  prevProjectsBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (currentPageIndex > 0) {
+      currentPageIndex--;
+      updateProjectsContainer(currentPageIndex, currentCategory);
+    }
+  });
+
+  nextProjectsBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (currentPageIndex < pageCount - 1) {
+      currentPageIndex++;
+      updateProjectsContainer(currentPageIndex, currentCategory);
+    }
+  });
 
   // main iife, if __name__ == "__main__": # lol
   (() => {
-    window.addEventListener("DOMContentLoaded", () => {
-      renderProjectCategoriesBtns();
-      updateProjectsContainer(currentPageIndex, currentCategory);
-    });
+    renderProjectCategoriesBtns();
+    updateProjectsContainer(currentPageIndex, currentCategory);
   })(); // main iife
-})(); // projects block iife
-//*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+};
+
+window.addEventListener("DOMContentLoaded", () => InitializeBlogsSection());
+window.addEventListener("DOMContentLoaded", () => InitializeProjectsSection());
