@@ -96,7 +96,7 @@ const InitializeProjectsSection = () => {
       title: "chip8.cpp",
       desc: "A modern C++ implementation of the classic CHIP-8 system including an emulator, an assembler and a disassembler.",
       tags: ["c++", "graphic"],
-      github: "https://github.com/Muhammed-Rajab/file-boy",
+      github: "https://github.com/Muhammed-Rajab/chip8.cpp",
       under_development: false,
       new_project: true,
     },
