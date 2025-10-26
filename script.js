@@ -47,7 +47,7 @@
     if (new_post) {
       const gif = document.createElement("img");
       gif.src = "./assets/images/new-gif-smol.gif";
-      gif.alt = "new tag";
+      gif.alt = "";
       gif.setAttribute("aria-hidden", "true");
 
       gif.style.width = "32px";
@@ -77,6 +77,9 @@
 
 /* [[WORKS: lol, bunch of jr. DEV projects]] */
 {
+  /*
+   * NOTE: update this
+   * */
   const works = [
     {
       title: "file-boy",
