@@ -227,7 +227,7 @@ footer {
 .projects .container .project {
   margin-top: 0.5rem;
 }
-.projects .container .project .under-dev-work {
+.projects .container .project .under-development {
   color: red !important;
 }
 .projects .container .project .title {

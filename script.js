@@ -217,7 +217,7 @@
     const linkA = document.createElement("a");
     linkA.classList.add("work-link");
     if (under_development) {
-      linkA.classList.add("under-dev-work");
+      linkA.classList.add("under-development");
     }
     linkA.href = github;
     linkA.target = "_blank";
@@ -269,6 +269,10 @@
     // Append the project div to the body (or another container element)
     return projectDiv;
   }
+
+  /**********************
+   * RENDERING & UPDATION
+   *********************/
 
   // * FUNCTION TO SHOW WORKS BASED ON PAGE NUMBER AND CATEGORY
   function updateWorksContainer(pageIndex = 0, category = "all") {
