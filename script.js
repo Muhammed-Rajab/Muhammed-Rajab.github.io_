@@ -76,7 +76,7 @@
 })();
 
 /* [[WORKS: lol, bunch of jr. DEV projects]] */
-{
+(() => {
   /*
    * NOTE: update this
    * */
@@ -351,5 +351,5 @@
   }
 
   window.addEventListener("DOMContentLoaded", main);
-}
+})();
 //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
