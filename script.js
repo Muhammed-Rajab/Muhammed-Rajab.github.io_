@@ -1,4 +1,4 @@
-/*[[ BLOGS: i rarely write, lol  ]]*/
+/* [[ BLOGS: i rarely write, lol]] */
 (() => {
   /*
    * NOTE: update this list to add or remove blogs from homepage.
@@ -75,8 +75,7 @@
   window.addEventListener("DOMContentLoaded", updateBlogsList);
 })();
 
-//*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
+/* [[WORKS: lol, bunch of jr. DEV projects]] */
 {
   const works = [
     {
