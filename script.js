@@ -86,6 +86,8 @@ const InitializeProjectsSection = () => {
    * }
    *
    * maybe add priority??? so it would show important stuff in the beginning?
+   * NOTE: as of now, it's getting filtered top to bottom? so no need for priority???
+   *       i don't know if it works every time since we are using sets.
    * */
 
   /**************************************
