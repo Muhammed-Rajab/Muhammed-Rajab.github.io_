@@ -144,7 +144,6 @@
   const nextWorksButton = document.querySelector(".next-btn");
   const worksContainer = document.querySelector(".works-container");
   const pageNumberPara = document.querySelector(".works-pagination");
-  const worksPageNoPara = document.querySelector(".works-pagination");
   const worksCategoriesContainer = document.querySelector(".works-categories");
 
   const categories = [
