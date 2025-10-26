@@ -158,14 +158,14 @@ footer {
   list-style-position: inside;
   list-style-type: circle;
 }
-.works .works-categories {
+.works .categories {
   margin-top: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   row-gap: 10px;
 }
-.works .works-categories button {
+.works .categories button {
   padding: 2px 5px;
   color: white;
   font-family: inherit;
@@ -175,19 +175,19 @@ footer {
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.works .works-categories button:hover {
+.works .categories button:hover {
   background-color: white;
   color: black;
   border-color: black;
 }
-.works .works-categories .bold-button {
+.works .categories .bold-button {
   background-color: white;
   color: black;
 }
-.works .works-pagination {
+.works .pagination {
   text-align: center;
 }
-.works .works-navigator {
+.works .navigator {
   display: flex;
   width: 100%;
   justify-content: center;
@@ -196,7 +196,7 @@ footer {
   margin-top: 3rem;
   margin-bottom: 2rem;
 }
-.works .works-navigator button {
+.works .navigator button {
   background-color: black;
   color: white;
   border: 1.5px solid gray;
@@ -206,31 +206,31 @@ footer {
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.works .works-navigator button:hover {
+.works .navigator button:hover {
   background-color: white;
   color: black;
   border-color: black;
 }
-.works .works-navigator button:disabled {
+.works .navigator button:disabled {
   background-color: black;
   border: 1.5px solid #444;
   color: #444;
 }
-.works .works-container {
+.works .container {
   margin-top: 20px;
 }
-.works .works-container hr {
+.works .container hr {
   margin: 20px 0px;
   height: 0.5px;
   border: 0.5px solid #333;
 }
-.works .works-container .project {
+.works .container .project {
   margin-top: 0.5rem;
 }
-.works .works-container .project .under-dev-work {
+.works .container .project .under-dev-work {
   color: red !important;
 }
-.works .works-container .project .title {
+.works .container .project .title {
   font-size: 1rem;
   color: gray;
   width: fit-content;
@@ -242,10 +242,10 @@ footer {
   color: pink;
   transition: transform 0.2s ease;
 }
-.works .works-container .project .title:hover {
+.works .container .project .title:hover {
   transform: scale(1.005);
 }
-.works .works-container .project .title a {
+.works .container .project .title a {
   color: white;
   font-size: 1.5rem;
   text-decoration: none;
@@ -258,21 +258,21 @@ footer {
   text-underline-offset: 6.5px;
   text-decoration-thickness: 2px;
 }
-.works .works-container .project .title a:hover {
+.works .container .project .title a:hover {
   text-decoration-color: hotpink;
 }
-.works .works-container .project .title a:visited {
+.works .container .project .title a:visited {
   text-decoration-color: #1e90ff;
 }
-.works .works-container .project .title .new-tag {
+.works .container .project .title .new-tag {
   width: 28px;
   height: 28px;
 }
-.works .works-container .project .description {
+.works .container .project .description {
   margin-top: 0.25rem;
   color: #888;
 }
-.works .works-container .project .tags {
+.works .container .project .tags {
   margin-top: 10px;
   font-size: 0.85rem;
   color: #555;

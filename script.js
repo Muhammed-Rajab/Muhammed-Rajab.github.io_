@@ -90,6 +90,10 @@
    *  new_project:        boolean?  // whether it's a new project (adds gif)
    * }
    * */
+
+  /**************************************
+   * PROJECTS
+   *************************************/
   const projects = [
     {
       title: "file-boy",
@@ -149,9 +153,9 @@
     },
   ];
 
-  //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-  //* WORKS SECTIONS HANDLING
-  //*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  /**************************
+   * CONSTANTS & UI ELEMENTS
+   *************************/
   const prevWorksButton = document.querySelector(".prev-btn");
   const nextWorksButton = document.querySelector(".next-btn");
   const worksContainer = document.querySelector(".works-container");

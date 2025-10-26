@@ -161,7 +161,7 @@
     list-style-type: circle;
   }
 
-  .works-categories {
+  .categories {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
@@ -192,11 +192,11 @@
     }
   }
 
-  .works-pagination {
+  .pagination {
     text-align: center;
   }
 
-  .works-navigator {
+  .navigator {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -234,7 +234,7 @@
     .next-btn {}
   }
 
-  .works-container {
+  .container {
     margin-top: 20px;
 
     hr {
