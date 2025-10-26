@@ -156,18 +156,28 @@
   /**************************
    * CONSTANTS & UI ELEMENTS
    *************************/
-  const prevWorksButton = document.querySelector(".prev-btn");
-  const nextWorksButton = document.querySelector(".next-btn");
-  const worksContainer = document.querySelector(".works-container");
-  const pageNumberPara = document.querySelector(".works-pagination");
-  const worksCategoriesContainer = document.querySelector(".works-categories");
 
-  const categories = [
-    "all",
-    ...new Set(
-      works.map((work) => work.tags).reduce((acc, curr) => [...acc, ...curr]),
-    ),
-  ];
+  // categories
+  const projectCategoriesContainer = document.querySelector(
+    ".projects > .categories",
+  );
+
+  // project list
+  const projectsContainer = document.querySelector(".projects > .container");
+
+  // pagination
+  const paginationParagraph = document.querySelector(
+    ".projects > .navigator> .pagination",
+  );
+  const prevProjectsBtn = document.querySelector(
+    ".projects > .navigator>.prev-btn",
+  );
+  const nextProjectsBtn = document.querySelector(
+    ".projects > .navigator>.next-btn",
+  );
+
+  // extract all tags
+  const categories = ["all", ...new Set(projects.flatMap((work) => work.tags))];
 
   let currentPageIndex = 0;
   let currentCategory = "all";

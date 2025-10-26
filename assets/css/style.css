@@ -154,18 +154,18 @@ footer {
   text-decoration-color: hotpink;
 }
 
-.works li {
+.projects li {
   list-style-position: inside;
   list-style-type: circle;
 }
-.works .categories {
+.projects .categories {
   margin-top: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   row-gap: 10px;
 }
-.works .categories button {
+.projects .categories button {
   padding: 2px 5px;
   color: white;
   font-family: inherit;
@@ -175,19 +175,19 @@ footer {
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.works .categories button:hover {
+.projects .categories button:hover {
   background-color: white;
   color: black;
   border-color: black;
 }
-.works .categories .bold-button {
+.projects .categories .bold-button {
   background-color: white;
   color: black;
 }
-.works .pagination {
+.projects .pagination {
   text-align: center;
 }
-.works .navigator {
+.projects .navigator {
   display: flex;
   width: 100%;
   justify-content: center;
@@ -196,7 +196,7 @@ footer {
   margin-top: 3rem;
   margin-bottom: 2rem;
 }
-.works .navigator button {
+.projects .navigator button {
   background-color: black;
   color: white;
   border: 1.5px solid gray;
@@ -206,31 +206,31 @@ footer {
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.works .navigator button:hover {
+.projects .navigator button:hover {
   background-color: white;
   color: black;
   border-color: black;
 }
-.works .navigator button:disabled {
+.projects .navigator button:disabled {
   background-color: black;
   border: 1.5px solid #444;
   color: #444;
 }
-.works .container {
+.projects .container {
   margin-top: 20px;
 }
-.works .container hr {
+.projects .container hr {
   margin: 20px 0px;
   height: 0.5px;
   border: 0.5px solid #333;
 }
-.works .container .project {
+.projects .container .project {
   margin-top: 0.5rem;
 }
-.works .container .project .under-dev-work {
+.projects .container .project .under-dev-work {
   color: red !important;
 }
-.works .container .project .title {
+.projects .container .project .title {
   font-size: 1rem;
   color: gray;
   width: fit-content;
@@ -242,10 +242,10 @@ footer {
   color: pink;
   transition: transform 0.2s ease;
 }
-.works .container .project .title:hover {
+.projects .container .project .title:hover {
   transform: scale(1.005);
 }
-.works .container .project .title a {
+.projects .container .project .title a {
   color: white;
   font-size: 1.5rem;
   text-decoration: none;
@@ -258,21 +258,21 @@ footer {
   text-underline-offset: 6.5px;
   text-decoration-thickness: 2px;
 }
-.works .container .project .title a:hover {
+.projects .container .project .title a:hover {
   text-decoration-color: hotpink;
 }
-.works .container .project .title a:visited {
+.projects .container .project .title a:visited {
   text-decoration-color: #1e90ff;
 }
-.works .container .project .title .new-tag {
+.projects .container .project .title .new-tag {
   width: 28px;
   height: 28px;
 }
-.works .container .project .description {
+.projects .container .project .description {
   margin-top: 0.25rem;
   color: #888;
 }
-.works .container .project .tags {
+.projects .container .project .tags {
   margin-top: 10px;
   font-size: 0.85rem;
   color: #555;
