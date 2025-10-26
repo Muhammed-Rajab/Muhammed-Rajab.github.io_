@@ -101,6 +101,9 @@ footer {
   color: lightpink;
   font-weight: bold;
 }
+.blogs .blogs-container ul li {
+  width: fit-content;
+}
 .blogs .blogs-container ul li a {
   color: white;
   text-decoration-line: underline;
@@ -118,8 +121,18 @@ footer {
 .blogs .blogs-container ul li a:visited {
   text-decoration-color: #1e90ff;
 }
+.blogs .blogs-container ul li {
+  transition: transform 0.2s ease;
+}
+.blogs .blogs-container ul li:hover {
+  transform: scale(1.005);
+}
 .blogs .more-blogs {
   margin-top: 1rem;
+  transition: transform 0.2s ease;
+}
+.blogs .more-blogs:hover {
+  transform: scale(1.005);
 }
 .blogs .more-blogs a {
   color: lightpink;
@@ -218,12 +231,17 @@ footer {
 .works .works-container .project .title {
   font-size: 1rem;
   color: gray;
+  width: fit-content;
   display: flex;
   justify-content: start;
   align-items: center;
   text-align: center;
   vertical-align: middle;
   color: pink;
+  transition: transform 0.2s ease;
+}
+.works .works-container .project .title:hover {
+  transform: scale(1.005);
 }
 .works .works-container .project .title a {
   color: white;

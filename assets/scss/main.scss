@@ -80,6 +80,8 @@
       }
 
       li {
+        width: fit-content;
+
         a {
           color: white;
           text-decoration-line: underline;
@@ -104,12 +106,24 @@
 
         }
 
+        transition: transform 0.2s ease; // smooth scaling
+
+        &:hover {
+          transform: scale(1.005); // scale up 10% on hover
+        }
+
       }
     }
   }
 
   .more-blogs {
     margin-top: 1rem;
+
+    transition: transform 0.2s ease; // smooth scaling
+
+    &:hover {
+      transform: scale(1.005); // scale up 10% on hover
+    }
 
     a {
       color: lightpink;
@@ -237,6 +251,8 @@
         font-size: 1rem;
         color: gray;
 
+        width: fit-content;
+
         display: flex;
         justify-content: start;
         align-items: center;
@@ -244,6 +260,12 @@
         vertical-align: middle;
 
         color: pink;
+
+        transition: transform 0.2s ease;
+
+        &:hover {
+          transform: scale(1.005);
+        }
 
         a {
           color: white;
